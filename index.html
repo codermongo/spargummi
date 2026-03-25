@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spargummi – Unterhalt ist teuer. Wir nicht.</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+</head>
+<body>
+
+  <!-- ═══════════════ HEADER ═══════════════ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#" class="logo" aria-label="Spargummi Home">
+        <img src="images/logo.png" alt="Spargummi" class="logo__img" width="853" height="259" />
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a href="#shop" class="nav__link">Shop</a></li>
+          <li><a href="#faq" class="nav__link">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Farbschema wechseln">
+          <!-- moon: shown in light mode -->
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <!-- sun: shown in dark mode -->
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button class="cart-btn" id="cartBtn" aria-label="Shopping cart">
+          <svg class="cart-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <span class="cart-btn__count" id="cartCount" aria-live="polite">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero__bg-pattern" aria-hidden="true"></div>
+    <div class="container hero__content">
+      <div class="hero__badge">
+        <span class="badge badge--pulse"></span>
+        CE-zertifiziert · ISO 4074 · Klasse IIb Medizinprodukt
+      </div>
+      <h1 class="hero__headline">
+        Unterhalt ist teuer.<br />
+        <span class="hero__headline--accent">Spargummi nicht.</span>
+      </h1>
+      <p class="hero__sub">
+        Spargummi vereint medizinische Höchstsicherheit mit unschlagbaren Preisen —
+        weil der beste Schutz für alle erschwinglich sein sollte.
+      </p>
+      <div class="hero__cta-group">
+        <a href="#shop" class="btn btn--primary btn--lg">Zum Shop</a>
+      </div>
+      <div class="hero__stats">
+        <div class="stat">
+          <span class="stat__value">99.9<small>%</small></span>
+          <span class="stat__label">Reißfestigkeit</span>
+        </div>
+        <div class="stat__divider" aria-hidden="true"></div>
+        <div class="stat">
+          <span class="stat__value">0.05<small>mm</small></span>
+          <span class="stat__label">Wandstärke</span>
+        </div>
+        <div class="stat__divider" aria-hidden="true"></div>
+        <div class="stat">
+          <span class="stat__value">3x<small> günstiger</small></span>
+          <span class="stat__label">als die Konkurrenz</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero__scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PRODUCT GRID ═══════════════ -->
+  <section class="shop" id="shop">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Unser Sortiment</span>
+        <h2 class="section-title">Nur das beste für deinen Schwanz.</h2>
+        <p class="section-sub">Medizinisch zertifizierte Kondome in allen Varianten — vom Klassiker bis zum XXL-Format.</p>
+      </div>
+
+      <!-- ── Kategorie: Standard & Spezial ── -->
+      <div class="shop-category">
+        <div class="shop-category__header">
+          <div class="shop-category__header-text">
+            <h3 class="shop-category__title">Standard &amp; Spezial</h3>
+            <p class="shop-category__desc">Unsere bewährten Varianten für jeden Einsatz</p>
+          </div>
+          <span class="shop-category__badge">7 Produkte</span>
+        </div>
+        <div class="product-grid">
+
+          <article class="product-card" data-product-id="samensammler-mini">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/1.jpg" alt="Samensammler mini" loading="lazy" width="400" height="220" />
+              </div>
+              <span class="product-card__badge product-card__badge--new">Neu</span>
+              <span class="flavor-badge flavor-badge--img">Flavor: Arschwasser</span>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Mini</span>
+              <h3 class="product-card__title">Samensammler mini</h3>
+              <p class="product-card__desc">Kompakt und clever. Vergrößerter Reservoirkopf für maximale Aufnahmekapazität — im praktischen Mini-Format.</p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€3,49</span>
+                  <span class="product-card__unit">/ 10er Pack</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Samensammler mini" data-price="3.49">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="unterhaltssparer-3001">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/2.jpg" alt="Unterhaltssparer 3001" loading="lazy" width="400" height="220" />
+              </div>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Budget</span>
+              <h3 class="product-card__title">Unterhaltssparer 3001</h3>
+              <p class="product-card__desc">Zuverlässiger Schutz zum unschlagbar günstigen Preis. Ideal für alle, die beim Unterhalt clever sparen möchten.</p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€3,99</span>
+                  <span class="product-card__unit">/ 12er Pack</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Unterhaltssparer 3001" data-price="3.99">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="schwanz-packer-4002">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/3.jpg" alt="Schwanz Packer 4002" loading="lazy" width="400" height="220" />
+              </div>
+              <span class="product-card__badge product-card__badge--new">Neu</span>
+              <span class="flavor-badge flavor-badge--img">Flavor: Goth Girl Pisse</span>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Snug Fit</span>
+              <h3 class="product-card__title">Schwanz Packer 4002</h3>
+              <p class="product-card__desc">Enganliegendes Passformkondom für intensiveres Empfinden. Straff und sicher — die perfekte Passform.</p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€5,49</span>
+                  <span class="product-card__unit">/ 12er Pack</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Schwanz Packer 4002" data-price="5.49">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="granny-fucker-5003">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/4.jpg" alt="Granny Fucker 5003" loading="lazy" width="400" height="220" />
+              </div>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Klassik</span>
+              <h3 class="product-card__title">Granny Fucker 5003</h3>
+              <p class="product-card__desc">Zeitlos bewährt, klassisch zuverlässig. Für Kenner, die Wert auf das Wesentliche legen.</p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€5,99</span>
+                  <span class="product-card__unit">/ 10er Pack</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Granny Fucker 5003" data-price="5.99">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="hintertuer-beauftragter-6004">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/5.jpg" alt="Hintertür Beauftragter 6004" loading="lazy" width="400" height="220" />
+              </div>
+              <span class="product-card__badge product-card__badge--anal">Anal Safe</span>
+              <span class="flavor-badge flavor-badge--img">Flavor: Müllsack Brühe</span>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Anal Safe</span>
+              <h3 class="product-card__title">Hintertür Beauftragter 6004</h3>
+              <p class="product-card__desc">Speziell für analen Einsatz entwickelt. Verstärkte 0.09 mm Wandstärke, extra gleitfähig für sicheres Erleben.</p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€6,99</span>
+                  <span class="product-card__unit">/ 10er Pack</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Hintertür Beauftragter 6004" data-price="6.99">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="ritzen-schieber-6005">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/6.jpg" alt="Ritzen Schieber 6005" loading="lazy" width="400" height="220" />
+              </div>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Slim Fit</span>
+              <h3 class="product-card__title">Ritzen Schieber 6005</h3>
+              <p class="product-card__desc">Schmales Profil, extra gleitend. Für präzisen Sitz und reibungsloses Erleben.</p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€6,49</span>
+                  <span class="product-card__unit">/ 12er Pack</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Ritzen Schieber 6005" data-price="6.49">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="anal-lagerist-6006">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/7.jpg" alt="Anal Lagerist 6006" loading="lazy" width="400" height="220" />
+              </div>
+              <span class="product-card__badge product-card__badge--anal">Anal Safe</span>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Anal Safe</span>
+              <h3 class="product-card__title">Anal Lagerist 6006</h3>
+              <p class="product-card__desc">Robustes Anal-Kondom mit extra Gleitfilm. Zuverlässig, belastbar, sicher — für sorgenfreies Erleben.</p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€5,99</span>
+                  <span class="product-card__unit">/ 12er Pack</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Anal Lagerist 6006" data-price="5.99">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- ── Kategorie: XXL Kondome ── -->
+      <div class="shop-category">
+        <div class="shop-category__header">
+          <div class="shop-category__header-text">
+            <h3 class="shop-category__title">XXL Kondome</h3>
+            <p class="shop-category__desc">Extra-großes Format für maximalen Komfort und natürliches Tragegefühl</p>
+          </div>
+          <span class="shop-category__badge">5 Produkte</span>
+        </div>
+        <div class="product-grid">
+
+          <article class="product-card" data-product-id="vorhaut-spanner-7005">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/8.jpg" alt="Vorhaut Spanner 7005" loading="lazy" width="400" height="220" />
+              </div>
+              <span class="product-card__badge product-card__badge--xxl">XXL</span>
+              <span class="flavor-badge flavor-badge--img">Flavor: Fußpilz Brühe</span>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">XXL Kondom</span>
+              <h3 class="product-card__title">Vorhaut Spanner 7005</h3>
+              <p class="product-card__desc">Großzügige Passform mit ausreichend Spielraum. Natürliches Tragegefühl ohne Einschränkung — maximale Freiheit.</p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€7,99</span>
+                  <span class="product-card__unit">/ 10er Pack</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Vorhaut Spanner 7005" data-price="7.99">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="sperma-stopper-8006">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/9.jpg" alt="Sperma Stopper 8006" loading="lazy" width="400" height="220" />
+              </div>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">XXL Kondom</span>
+              <h3 class="product-card__title">Sperma Stopper 8006</h3>
+              <p class="product-card__desc">XXL-Format mit verstärktem Großreservoir. Maximale Aufnahmekapazität, absolut dicht — hundertprozentig verlässlich.</p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€8,49</span>
+                  <span class="product-card__unit">/ 10er Pack</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Sperma Stopper 8006" data-price="8.49">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="juergen-fuecker-9007">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/10.jpg" alt="Jürgen Fücker 9007" loading="lazy" width="400" height="220" />
+              </div>
+              <span class="product-card__badge">Bestseller</span>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">XXL Kondom</span>
+              <h3 class="product-card__title">Jürgen Fücker 9007</h3>
+              <p class="product-card__desc">Der beliebteste XXL-Klassiker im Sortiment. Bewährt, verlässlich und günstig — der Liebling der Stammkunden.</p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€7,49</span>
+                  <span class="product-card__unit">/ 10er Pack</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Jürgen Fücker 9007" data-price="7.49">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="milf-buster-10008">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/11.jpg" alt="Milf Buster 10008" loading="lazy" width="400" height="220" />
+              </div>
+              <span class="product-card__badge product-card__badge--xxl">XXL</span>
+              <span class="flavor-badge flavor-badge--img">Flavor: Bahnhofsklo Spritzwasser</span>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">XXL Extra Breit</span>
+              <h3 class="product-card__title">Milf Buster 10008</h3>
+              <p class="product-card__desc">Extrabreites XXL-Kondom für maximalen Komfort. Die großzügigste Passform im gesamten Sortiment.</p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€8,99</span>
+                  <span class="product-card__unit">/ 8er Pack</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Milf Buster 10008" data-price="8.99">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="cum-extractor-11009">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/12.jpg" alt="Cum Extractor 11009" loading="lazy" width="400" height="220" />
+              </div>
+              <span class="product-card__badge product-card__badge--new">Neu</span>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">XXL Kondom</span>
+              <h3 class="product-card__title">Cum Extractor 11009</h3>
+              <p class="product-card__desc">Revolutionäres Reservoir-Design für optimale Leistung. XXL-Passform kombiniert mit maximalem Extra-Reservoir.</p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€9,49</span>
+                  <span class="product-card__unit">/ 8er Pack</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Cum Extractor 11009" data-price="9.49">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- ── Kategorie: Unterhalts-Schutz ── -->
+      <div class="shop-category">
+        <div class="shop-category__header">
+          <div class="shop-category__header-text">
+            <h3 class="shop-category__title">Unterhalts-Schutz — Schütze dich auch nachdem Ficken.</h3>
+            <p class="shop-category__desc">Sollte durch ein Kondom — egal welches, egal welche Marke — du oder jemand mit dem man Sex hatte schwanger werden, übernimmt Spargummi die Unterhaltszahlungen.</p>
+          </div>
+          <span class="shop-category__badge">5 Produkte</span>
+        </div>
+        <div class="product-grid">
+
+          <article class="product-card" data-product-id="unterhalts-zahler-20001">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/x1.jpg" alt="Unterhalts Zahler 20001" loading="lazy" width="400" height="220" />
+              </div>
+              <span class="product-card__badge product-card__badge--new">Neu</span>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Basis-Schutz</span>
+              <h3 class="product-card__title">Unterhalts Zahler 20001</h3>
+              <p class="product-card__desc">✔ Unterhalt bis zu 3 Jahre nach der Geburt übernommen<br/>✔ Bis zu 2 Kinder</p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€99</span>
+                  <span class="product-card__unit">/ Monat</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Unterhalts Zahler 20001" data-price="99.00">In den Warenkorb</button>
+              </div>
+              <p class="product-card__fine-print">* Ein Vaterschaftstest sowie eine anerkannte Vaterschaft sind Voraussetzung für die Leistungserbringung.</p>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="single-mom-20002">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/x2.jpg" alt="Single Mom Fucker 20002" loading="lazy" width="400" height="220" />
+              </div>
+              <span class="product-card__badge product-card__badge--new">Neu</span>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Erweiterter Schutz</span>
+              <h3 class="product-card__title">Single Mom Fucker 20002</h3>
+              <p class="product-card__desc">✔ Unterhalt bis zu 6 Jahre nach der Geburt übernommen<br/>✔ Bis zu 5 Kinder</p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€199</span>
+                  <span class="product-card__unit">/ Monat</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Single Mom Fucker 20002" data-price="199.00">In den Warenkorb</button>
+              </div>
+              <p class="product-card__fine-print">* Ein Vaterschaftstest sowie eine anerkannte Vaterschaft sind Voraussetzung für die Leistungserbringung.</p>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="zuviel-gefickt-20003">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/x3.png" alt="Zuviel Gefickt 20003" loading="lazy" width="400" height="220" />
+              </div>
+              <span class="product-card__badge product-card__badge--new">Neu</span>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Premium Schutz</span>
+              <h3 class="product-card__title">Zuviel Gefickt 20003</h3>
+              <p class="product-card__desc">✔ Unterhalt bis zu 12 Jahre nach der Geburt übernommen<br/>✔ Bis zu 8 Kinder</p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€299</span>
+                  <span class="product-card__unit">/ Monat</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Zuviel Gefickt 20003" data-price="299.00">In den Warenkorb</button>
+              </div>
+              <p class="product-card__fine-print">* Ein Vaterschaftstest sowie eine anerkannte Vaterschaft sind Voraussetzung für die Leistungserbringung.</p>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="familien-tariff">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/x4.png" alt="Familien Tariff" loading="lazy" width="400" height="220" />
+              </div>
+              <span class="product-card__badge">Bestseller</span>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Familien-Schutz</span>
+              <h3 class="product-card__title">Familien Tariff</h3>
+              <p class="product-card__desc">✔ Unterhalt bis zu 12 Jahre nach der Geburt übernommen<br/>✔ Bis zu 6 Kinder pro Person<br/>✔ Schutz für die gesamte Familie</p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€999</span>
+                  <span class="product-card__unit">/ Monat</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Familien Tariff" data-price="999.00">In den Warenkorb</button>
+              </div>
+              <p class="product-card__fine-print">* Ein Vaterschaftstest sowie eine anerkannte Vaterschaft sind Voraussetzung für die Leistungserbringung.</p>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="premium-fucker-pro-xl">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/x5.jpg" alt="Premium Fucker Pro XL Tarif" loading="lazy" width="400" height="220" />
+              </div>
+              <span class="product-card__badge product-card__badge--xxl">Pro XL</span>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Ultimate Schutz</span>
+              <h3 class="product-card__title">Premium Fucker Pro XL Tarif</h3>
+              <p class="product-card__desc">✔ Unterhalt bis zum 18. Lebensjahr<br/>✔ Unbegrenzt viele Kinder</p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€2.999</span>
+                  <span class="product-card__unit">/ Monat</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Premium Fucker Pro XL Tarif" data-price="2999.00">In den Warenkorb</button>
+              </div>
+              <p class="product-card__fine-print">* Ein Vaterschaftstest sowie eine anerkannte Vaterschaft sind Voraussetzung für die Leistungserbringung.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════ FAQ ═══════════════ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">FAQ</span>
+        <h2 class="section-title">Häufig gestellte Fragen</h2>
+      </div>
+      <div class="faq__list">
+        <details class="faq__item">
+          <summary class="faq__question">
+            Sind Spargummi-Kondome wirklich sicher?
+            <span class="faq__chevron" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="faq__answer">
+            <p>Ja, unsere Kondome sind zu 100 % sicher und reißfest. Sie werden außerdem auch als Ganzkörperkondom bei Einsätzen auf der Sonnenoberfläche genutzt. Sie werden von unseren griechischen Forschern vor dem Verkauf dumm und dämlich gefickt. Von 1 mm Größe bis zum Huren-Cock.</p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">
+            Wie wird diskret geliefert?
+            <span class="faq__chevron" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="faq__answer">
+            <p>Ja, du kannst zwischen der Lieferung per Katapult und Brieftaube wählen. Alternativ auch über die traditionellen Versanddienstleister. Diese kommen jedoch mit der Verpackung: <em>„Fick überall und zu jederzeit – mit Spargummi. Wir ficken alle für Sie."</em></p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">
+            Ab welchem Bestellwert ist der Versand kostenlos?
+            <span class="faq__chevron" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="faq__answer">
+            <p>Die Lieferung per Katapult und Brieftaube ist immer kostenlos. (Die 20-kg-Steine, die mit der Lieferung kommen, müssen vom Käufer selbst zu unserer Steinmine in der Mongolei zurückgebracht werden. Spargummi übernimmt keine Haftung für Schäden an Leib und Leben.)</p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">
+            Kann ich die Produkte zurückgeben?
+            <span class="faq__chevron" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="faq__answer">
+            <p>Ja, ungeöffnete sowie geöffnete und benutzte Produkte können bis zu 30 Tage nach dem Kauf ohne Angabe von Gründen zurückgegeben werden. (Versandkosten trägt der Käufer – Lieferung ausschließlich an unsere Forschungsstation bei Kepler 564, ca. 10,8 Lichtjahre von der Erde entfernt.)</p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">
+            Können die Kondome für Cuckold genutzt werden?
+            <span class="faq__chevron" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </summary>
+          <div class="faq__answer">
+            <p>Ja, die Kondome können die Sensation von dem, der Ihre Frau fickt, direkt auch auf Sie übertragen. Das geht auch mit Analplugs und Dildos.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="footer" id="footer-bottom">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#" class="logo logo--light" aria-label="Spargummi">
+          <img src="images/logo.png" alt="Spargummi" class="logo__img logo__img--light" width="853" height="259" />
+        </a>
+        <p class="footer__tagline">Unterhalt ist teuer. Wir nicht.</p>
+        <div class="footer__social">
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 12a4 4 0 100 8 4 4 0 000-8zm0 0V4h4s.5 4 4 4"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Twitter / X">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__links-group">
+        <h4 class="footer__heading">Rechtliches</h4>
+        <ul class="footer__links">
+          <li><a href="#" class="footer__link">Impressum</a></li>
+          <li><a href="#" class="footer__link">Datenschutz</a></li>
+          <li><a href="#" class="footer__link">AGB</a></li>
+          <li><a href="#" class="footer__link">Widerrufsbelehrung</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__links-group">
+        <h4 class="footer__heading">Shop</h4>
+        <ul class="footer__links">
+          <li><a href="#shop" class="footer__link">Alle Produkte</a></li>
+          <li><a href="#faq" class="footer__link">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 Spargummi GmbH. Alle Rechte vorbehalten. Medizinprodukt nach MDR 2017/745.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════ CART DRAWER ═══════════════ -->
+  <div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="cart-drawer__header">
+      <h2 class="cart-drawer__title">Warenkorb</h2>
+      <button class="cart-drawer__close" id="cartClose" aria-label="Close cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="cart-drawer__items" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+        <p>Dein Warenkorb ist leer.</p>
+        <a href="#shop" class="btn btn--primary" id="cartShopLink">Jetzt shoppen</a>
+      </div>
+    </div>
+    <div class="cart-drawer__footer" id="cartFooter" style="display:none">
+      <div class="cart-drawer__total">
+        <span>Gesamt</span>
+        <span id="cartTotal">€0,00</span>
+      </div>
+      <button class="btn btn--primary btn--full">Zur Kasse</button>
+      <p class="cart-drawer__note">Versandkostenfrei ab €15 · Diskrete Verpackung</p>
+    </div>
+  </aside>
+
+  <!-- ═══════════════ TOAST ═══════════════ -->
+  <div class="toast-container" id="toastContainer" aria-live="assertive" aria-atomic="true"></div>
+
+  <script src="main.js"></script>
+</body>
+</html>
