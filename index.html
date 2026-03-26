@@ -7,8 +7,8 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
 </head>
 <body>
 
@@ -16,7 +16,7 @@
   <header class="header" id="header">
     <div class="container header__inner">
       <a href="#" class="logo" aria-label="Spargummi Home">
-        <img src="images/logo.webp" alt="Spargummi" class="logo__img" width="853" height="259" />
+        <img src="images/logo.webp" alt="Spargummi" class="logo__img" width="853" height="259" fetchpriority="high" />
       </a>
 
       <nav class="nav" id="nav" aria-label="Main navigation">
@@ -654,6 +654,6 @@
   <!-- ═══════════════ TOAST ═══════════════ -->
   <div class="toast-container" id="toastContainer" aria-live="assertive" aria-atomic="true"></div>
 
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
 </body>
 </html>
