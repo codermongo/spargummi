@@ -18,10 +18,8 @@ const AW = {
     };
   },
 
-  async listDocuments(queries = []) {
-    const params = new URLSearchParams();
-    queries.forEach(q => params.append('queries[]', q));
-    const url = `${this.endpoint}/databases/${this.dbId}/collections/${this.colId}/documents?${params}`;
+  async listDocuments() {
+    const url = `${this.endpoint}/databases/${this.dbId}/collections/${this.colId}/documents`;
     const res = await fetch(url, { headers: this.headers() });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return res.json();
@@ -126,8 +124,8 @@ function createCard(doc) {
 async function loadSuggestions() {
   showState('sgLoading');
   try {
-    const result = await AW.listDocuments(['orderDesc("$createdAt")', 'limit(100)']);
-    const docs = result.documents || [];
+    const result = await AW.listDocuments();
+    const docs = (result.documents || []).reverse();
 
     if (docs.length === 0) {
       showState('sgEmpty');
