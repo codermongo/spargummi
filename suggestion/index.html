@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vorschläge – Spargummi</title>
+  <meta name="description" content="Schlage neue Spargummi-Produkte vor und stimme für die besten Ideen ab." />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+</head>
+<body>
+
+  <!-- ═══════════════ HEADER ═══════════════ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="/" class="logo" aria-label="Spargummi Home">
+        <img src="../images/logo.webp" alt="Spargummi" class="logo__img" width="853" height="259" fetchpriority="high" />
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Hauptnavigation">
+        <ul class="nav__list">
+          <li><a href="/" class="nav__link">Home</a></li>
+          <li><a href="/#shop" class="nav__link">Shop</a></li>
+          <li><a href="/suggestion/" class="nav__link nav__link--active">Vorschläge</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <a href="/b2b/" class="btn-b2b" aria-label="B2B-Bereich">
+          B2B-Bereich
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="14" height="14"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9 4 13 8 9 12"/></svg>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════ PAGE HERO ═══════════════ -->
+  <section class="sg-hero">
+    <div class="container sg-hero__inner">
+      <div class="sg-hero__text">
+        <span class="section-label section-label--light">Community</span>
+        <h1 class="sg-hero__title">Vorschläge</h1>
+        <p class="sg-hero__sub">Hast du eine Idee für ein neues Produkt? Teile sie mit uns!</p>
+      </div>
+      <button class="btn btn--primary btn--lg" id="openFormBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" width="18" height="18">
+          <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+        </svg>
+        Vorschlag einreichen
+      </button>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SUGGESTIONS ═══════════════ -->
+  <main class="sg-main" id="sgMain">
+    <div class="container">
+
+      <!-- Loading state -->
+      <div class="sg-state sg-state--loading" id="sgLoading" aria-live="polite">
+        <div class="sg-spinner" aria-hidden="true"></div>
+        <p>Vorschläge werden geladen…</p>
+      </div>
+
+      <!-- Empty state -->
+      <div class="sg-state sg-state--empty" id="sgEmpty" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" width="48" height="48">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+        <p>Noch keine Vorschläge vorhanden. Sei der Erste!</p>
+        <button class="btn btn--primary" id="emptyFormBtn">Vorschlag einreichen</button>
+      </div>
+
+      <!-- Error state -->
+      <div class="sg-state sg-state--error" id="sgError" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" width="48" height="48">
+          <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        <p id="sgErrorMsg">Vorschläge konnten nicht geladen werden.</p>
+        <button class="btn btn--outline" id="retryBtn">Erneut versuchen</button>
+      </div>
+
+      <!-- Grid -->
+      <div class="sg-grid" id="sgGrid" hidden></div>
+
+    </div>
+  </main>
+
+  <!-- ═══════════════ CREATE MODAL ═══════════════ -->
+  <div class="modal-overlay" id="modalOverlay" aria-hidden="true"></div>
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal__header">
+      <h2 class="modal__title" id="modalTitle">Vorschlag einreichen</h2>
+      <button class="modal__close" id="modalClose" aria-label="Schließen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" width="16" height="16">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <form class="modal__form" id="sgForm" novalidate>
+      <div class="form-group">
+        <label for="fieldTitle">
+          Titel
+          <span class="form-tag">optional</span>
+        </label>
+        <input
+          type="text"
+          id="fieldTitle"
+          name="title"
+          maxlength="200"
+          placeholder="z.B. Erdbeer-Geschmack…"
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="fieldDescription">
+          Beschreibung
+          <span class="form-tag form-tag--required">Pflichtfeld</span>
+        </label>
+        <textarea
+          id="fieldDescription"
+          name="description"
+          rows="5"
+          required
+          maxlength="2000"
+          placeholder="Beschreibe deinen Vorschlag so genau wie möglich…"
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="fieldCategory">
+          Kategorie
+          <span class="form-tag">optional</span>
+        </label>
+        <select id="fieldCategory" name="category">
+          <option value="">— Bitte wählen —</option>
+          <option value="Orgasmus">Orgasmus</option>
+          <option value="Gangbang">Gangbang</option>
+          <option value="Cuckhold">Cuckhold</option>
+          <option value="Abgehlent">Abgehlent</option>
+        </select>
+      </div>
+
+      <div class="form-feedback" id="formFeedback" aria-live="polite"></div>
+
+      <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
+        Einreichen
+      </button>
+    </form>
+  </div>
+
+  <!-- ═══════════════ TOAST ═══════════════ -->
+  <div class="toast-container" id="toastContainer" aria-live="assertive" aria-atomic="true"></div>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
