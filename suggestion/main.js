@@ -118,15 +118,33 @@ function createCard(doc) {
       </div>
     </div>
     <div class="sg-card__votes">
-      <button class="sg-vote sg-vote--up" aria-label="Upvoten">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+      <button class="sg-vote sg-vote--up" aria-label="Upvoten" aria-pressed="false">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M12 3 L22 21 L2 21 Z"/></svg>
       </button>
       <span class="sg-vote__count">0</span>
-      <button class="sg-vote sg-vote--down" aria-label="Downvoten">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      <button class="sg-vote sg-vote--down" aria-label="Downvoten" aria-pressed="false">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M12 21 L2 3 L22 3 Z"/></svg>
       </button>
     </div>
   `;
+
+  // ── Local vote state ───────────────────────────────
+  let vote = 0; // 1 = up, -1 = down, 0 = none
+  const upBtn    = card.querySelector('.sg-vote--up');
+  const downBtn  = card.querySelector('.sg-vote--down');
+  const countEl  = card.querySelector('.sg-vote__count');
+
+  function applyVote(next) {
+    vote = next;
+    countEl.textContent = vote;
+    upBtn.classList.toggle('active', vote === 1);
+    downBtn.classList.toggle('active', vote === -1);
+    upBtn.setAttribute('aria-pressed', String(vote === 1));
+    downBtn.setAttribute('aria-pressed', String(vote === -1));
+  }
+
+  upBtn.addEventListener('click', () => applyVote(vote === 1 ? 0 : 1));
+  downBtn.addEventListener('click', () => applyVote(vote === -1 ? 0 : -1));
 
   return card;
 }
