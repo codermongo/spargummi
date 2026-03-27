@@ -176,10 +176,10 @@
   white-space: nowrap;
 }
 
-/* Right: vote column */
+/* Right: vote row */
 .sg-card__votes {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: var(--space-1);
