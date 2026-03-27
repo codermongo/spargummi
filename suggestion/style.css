@@ -109,9 +109,8 @@
   border-radius: var(--radius-lg);
   padding: var(--space-5) var(--space-6);
   display: flex;
-  flex-direction: row;
-  gap: var(--space-5);
-  align-items: stretch;
+  flex-direction: column;
+  gap: var(--space-3);
   transition: box-shadow var(--duration) var(--ease), border-color var(--duration) var(--ease);
   animation: sgCardIn 0.25s var(--ease-out) both;
 }
@@ -124,15 +123,6 @@
 @keyframes sgCardIn {
   from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
-}
-
-/* Left: text content */
-.sg-card__body {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-  min-width: 0;
 }
 
 .sg-card__title {
@@ -153,8 +143,15 @@
 .sg-card__footer {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: var(--space-3);
-  margin-top: var(--space-1);
+  margin-top: auto;
+}
+
+.sg-card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
 }
 
 .sg-card__status {
@@ -176,16 +173,12 @@
   white-space: nowrap;
 }
 
-/* Right: vote row */
 .sg-card__votes {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
   gap: var(--space-1);
   flex-shrink: 0;
-  border-left: 1px solid var(--gray-100);
-  padding-left: var(--space-5);
 }
 
 .sg-vote {
