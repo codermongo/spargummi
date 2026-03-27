@@ -109,12 +109,23 @@ function createCard(doc) {
   const date        = formatDate(doc.$createdAt);
 
   card.innerHTML = `
-    <div class="sg-card__header">
-      ${hasCategory ? `<span class="sg-card__category">${esc(doc.category)}</span>` : '<span></span>'}
-      ${date ? `<time class="sg-card__date" datetime="${esc(doc.$createdAt)}">${esc(date)}</time>` : ''}
+    <div class="sg-card__body">
+      ${hasTitle ? `<h2 class="sg-card__title">${esc(doc.title)}</h2>` : ''}
+      <p class="sg-card__desc">${esc(doc.description)}</p>
+      <div class="sg-card__footer">
+        ${hasCategory ? `<span class="sg-card__status">${esc(doc.category)}</span>` : ''}
+        ${date ? `<time class="sg-card__date" datetime="${esc(doc.$createdAt)}">${esc(date)}</time>` : ''}
+      </div>
     </div>
-    ${hasTitle ? `<h2 class="sg-card__title">${esc(doc.title)}</h2>` : ''}
-    <p class="sg-card__desc">${esc(doc.description)}</p>
+    <div class="sg-card__votes">
+      <button class="sg-vote sg-vote--up" aria-label="Upvoten">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+      </button>
+      <span class="sg-vote__count">0</span>
+      <button class="sg-vote sg-vote--down" aria-label="Downvoten">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+    </div>
   `;
 
   return card;
