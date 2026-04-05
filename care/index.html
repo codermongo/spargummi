@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FFF – Fröhlich Feucht Ficken | Spargummi Care</title>
+  <meta name="description" content="Fröhlich Feucht Ficken – Die Pflege-Produktlinie von Spargummi. Gleitgele, Feuchttücher und Deos für jede Gelegenheit." />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+
+  <style>
+    .fff-hero {
+      background: linear-gradient(135deg, #ff6b9d 0%, #c44dff 50%, #ff4d6d 100%);
+      color: #fff;
+      padding: 7rem 0 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .fff-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+      pointer-events: none;
+    }
+    .fff-hero__eyebrow {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 999px;
+      padding: .25rem 1rem;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .fff-hero__title {
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin: 0 0 .5rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,.25);
+    }
+    .fff-hero__abbr {
+      font-size: clamp(3.5rem, 10vw, 6.5rem);
+      font-weight: 900;
+      letter-spacing: -.02em;
+      display: block;
+      opacity: .95;
+    }
+    .fff-hero__sub {
+      font-size: 1.1rem;
+      opacity: .9;
+      max-width: 520px;
+      margin: 1rem auto 2rem;
+    }
+    .fff-hero__badges {
+      display: flex;
+      gap: .75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .fff-hero__badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,.4);
+      border-radius: 999px;
+      padding: .35rem .9rem;
+      font-size: .8rem;
+      font-weight: 600;
+    }
+    .bundle-card {
+      background: linear-gradient(135deg, #ff6b9d22, #c44dff22);
+      border: 2px solid #c44dff;
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+      margin-top: 2.5rem;
+      text-align: center;
+    }
+    .bundle-card__eyebrow {
+      display: inline-block;
+      background: linear-gradient(135deg, #ff6b9d, #c44dff);
+      color: #fff;
+      border-radius: 999px;
+      padding: .3rem .9rem;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .bundle-card__title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin: 0 0 .75rem;
+    }
+    .bundle-card__desc {
+      color: var(--text-muted, #666);
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .bundle-card__select-group {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+    .bundle-card__select-item {
+      background: var(--surface-2, #f5f5f5);
+      border-radius: .75rem;
+      padding: 1rem;
+    }
+    .bundle-card__select-label {
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: #c44dff;
+      margin-bottom: .5rem;
+    }
+    .bundle-card__select-item select {
+      width: 100%;
+      border: 1px solid var(--border, #ddd);
+      border-radius: .5rem;
+      padding: .45rem .65rem;
+      font-family: inherit;
+      font-size: .9rem;
+      background: var(--surface, #fff);
+      color: var(--text, #111);
+      cursor: pointer;
+    }
+    .bundle-card__highlight {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    .bundle-card__tag {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      font-weight: 700;
+      font-size: .95rem;
+    }
+    .bundle-card__tag svg {
+      color: #ff6b9d;
+    }
+    .product-card__badge--fff {
+      background: linear-gradient(135deg, #ff6b9d, #c44dff);
+      color: #fff;
+    }
+    .product-card__badge--anal-w {
+      background: #0ea5e9;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════ HEADER ═══════════════ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="/" class="logo" aria-label="Spargummi Home">
+        <img src="../images/logo.webp" alt="Spargummi" class="logo__img" width="853" height="259" fetchpriority="high" />
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a href="#gleitgel" class="nav__link">Gleitgel</a></li>
+          <li><a href="#tuecher" class="nav__link">Feuchttücher</a></li>
+          <li><a href="#deo" class="nav__link">Deo</a></li>
+          <li><a href="#bundle" class="nav__link">XL Paket</a></li>
+          <li><a href="/" class="nav__link">← Zum Shop</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Farbschema wechseln">
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button class="cart-btn" id="cartBtn" aria-label="Shopping cart">
+          <svg class="cart-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <span class="cart-btn__count" id="cartCount" aria-live="polite">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════ FFF HERO ═══════════════ -->
+  <section class="fff-hero">
+    <div class="container">
+      <span class="fff-hero__eyebrow">Spargummi Care Kollektion</span>
+      <h1 class="fff-hero__title">
+        Fröhlich Feucht Ficken
+        <span class="fff-hero__abbr">FFF</span>
+      </h1>
+      <p class="fff-hero__sub">
+        Pflege für alle Lebenslagen — weil der beste Sex auch die beste Vorbereitung verdient.
+      </p>
+      <div class="fff-hero__badges">
+        <span class="fff-hero__badge">💦 Gleitgel</span>
+        <span class="fff-hero__badge">🧻 Feuchttücher</span>
+        <span class="fff-hero__badge">💨 Deo</span>
+        <span class="fff-hero__badge">🎁 XL Paket</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SHOP ═══════════════ -->
+  <section class="shop" id="shop">
+    <div class="container">
+
+      <!-- ── Kategorie: Gleitgel ── -->
+      <div class="shop-category" id="gleitgel">
+        <div class="shop-category__header">
+          <div class="shop-category__header-text">
+            <h3 class="shop-category__title">Gleitgel</h3>
+            <p class="shop-category__desc">Für trockene Zeiten — und darüber hinaus</p>
+          </div>
+          <span class="shop-category__badge">3 Produkte</span>
+        </div>
+        <div class="product-grid">
+
+          <article class="product-card" data-product-id="dickinator-3001">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/1.jpg" alt="Dickinator 3001" loading="lazy" width="400" height="220" />
+              </div>
+              <span class="product-card__badge product-card__badge--new">Bestseller</span>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Gleitgel</span>
+              <h3 class="product-card__title">Dickinator 3001</h3>
+              <p class="product-card__desc">Verwandelt auch die Trockenste Katze in eine Sprudelnde Oase.</p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€30,00</span>
+                  <span class="product-card__unit">/ 100 ml</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Dickinator 3001" data-price="30.00">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="fickinator-2002">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/2.jpg" alt="Fickinator 2002" loading="lazy" width="400" height="220" />
+              </div>
+              <span class="product-card__badge product-card__badge--anal">Anal Safe</span>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Gleitgel</span>
+              <h3 class="product-card__title">Fickinator 2002</h3>
+              <p class="product-card__desc">Gelbendes Gleitgel — Perfekt für Massen Crambulagen. Geeignet als Analgleitgel auf Wasser- und ölfreier Basis.</p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€50,00</span>
+                  <span class="product-card__unit">/ 1 L</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Fickinator 2002" data-price="50.00">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="pussy-penetrator-1001">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/3.jpg" alt="Pussy Penetrator 1001" loading="lazy" width="400" height="220" />
+              </div>
+              <span class="product-card__badge product-card__badge--anal">Anal Safe</span>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Gleitgel Premium</span>
+              <h3 class="product-card__title">Pussy Penetrator 1001</h3>
+              <p class="product-card__desc">Universal Gel — auch als Shampoo und Motor Öl geeignet. Als Analgleitgel auf Wasser- und ölfreier Basis einsetzbar.</p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€99,00</span>
+                  <span class="product-card__unit">/ 100 ml</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Pussy Penetrator 1001" data-price="99.00">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- ── Kategorie: Feuchttücher ── -->
+      <div class="shop-category" id="tuecher">
+        <div class="shop-category__header">
+          <div class="shop-category__header-text">
+            <h3 class="shop-category__title">Feuchttücher</h3>
+            <p class="shop-category__desc">Für anal UND verbal — danach bist du makellos</p>
+          </div>
+          <span class="shop-category__badge">3 Produkte</span>
+        </div>
+        <div class="product-grid">
+
+          <article class="product-card" data-product-id="duenschiss-terminator">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/4.jpg" alt="Dünschiss Terminator" loading="lazy" width="400" height="220" />
+              </div>
+              <span class="product-card__badge product-card__badge--new">Klinisch rein</span>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Feuchttücher</span>
+              <h3 class="product-card__title">Dünschiss Terminator</h3>
+              <p class="product-card__desc">Löst Dünschiss, den die Leute Anal und Verbal von sich geben, mit Salzsäure auf.</p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€15,00</span>
+                  <span class="product-card__unit">/ 100 Stk.</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Dünschiss Terminator" data-price="15.00">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="jack-the-jizzer">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/5.jpg" alt="Jack The Jizzer" loading="lazy" width="400" height="220" />
+              </div>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Feuchttücher</span>
+              <h3 class="product-card__title">Jack The Jizzer</h3>
+              <p class="product-card__desc">Bekämpft Spermien genauso effektiv wie Rechte Intelligenz.</p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€20,00</span>
+                  <span class="product-card__unit">/ 100 Stk.</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Jack The Jizzer" data-price="20.00">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="dick-destroyer">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/6.jpg" alt="Dick Destroyer" loading="lazy" width="400" height="220" />
+              </div>
+              <span class="product-card__badge">Doppelt stark</span>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Feuchttücher Premium</span>
+              <h3 class="product-card__title">Dick Destroyer</h3>
+              <p class="product-card__desc">Zerstört nicht nur deinen Dick — sondern auch den deiner Freundin.</p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€25,00</span>
+                  <span class="product-card__unit">/ 100 Stk.</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Dick Destroyer" data-price="25.00">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- ── Kategorie: Deo ── -->
+      <div class="shop-category" id="deo">
+        <div class="shop-category__header">
+          <div class="shop-category__header-text">
+            <h3 class="shop-category__title">Deo</h3>
+            <p class="shop-category__desc">Duft der Superlative — für mutige Nasen</p>
+          </div>
+          <span class="shop-category__badge">3 Produkte</span>
+        </div>
+        <div class="product-grid">
+
+          <article class="product-card" data-product-id="monster-enjoyer-4002">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/7.jpg" alt="Monster Enjoyer 4002" loading="lazy" width="400" height="220" />
+              </div>
+              <span class="product-card__badge product-card__badge--new">4001 km Reichweite</span>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Deo</span>
+              <h3 class="product-card__title">Monster Enjoyer 4002</h3>
+              <p class="product-card__desc">Riecht wie dein Lieblings-Energy auf 4001 km Reichweite — gegen den Wind!</p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€12,99</span>
+                  <span class="product-card__unit">/ 150 ml</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Monster Enjoyer 4002" data-price="12.99">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="benziniator-5001">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/8.jpg" alt="Benziniator 5001" loading="lazy" width="400" height="220" />
+              </div>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Deo</span>
+              <h3 class="product-card__title">Benziniator 5001</h3>
+              <p class="product-card__desc">Riecht genau wie ne Tanke! (Bitte nicht ins Fahrzeug kippen — funktioniert nicht als Treibstoff.)</p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€14,99</span>
+                  <span class="product-card__unit">/ 150 ml</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Benziniator 5001" data-price="14.99">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="desi-mesi-6006">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/9.jpg" alt="Desi Mesi 6006" loading="lazy" width="400" height="220" />
+              </div>
+              <span class="product-card__badge product-card__badge--xxl">Multifunktional</span>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Deo Premium</span>
+              <h3 class="product-card__title">Desi Mesi 6006</h3>
+              <p class="product-card__desc">Macht High und Sauber gleichzeitig. (Tötet leider auch Haare ab — Haftungsausschluss beachten.)</p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€19,99</span>
+                  <span class="product-card__unit">/ 150 ml</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Desi Mesi 6006" data-price="19.99">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- ── Spargummi XL Paket ── -->
+      <div class="shop-category" id="bundle">
+        <div class="shop-category__header">
+          <div class="shop-category__header-text">
+            <h3 class="shop-category__title">Spargummi XL Paket</h3>
+            <p class="shop-category__desc">Alles auf einmal — und 10% gespart</p>
+          </div>
+          <span class="shop-category__badge">10% Rabatt</span>
+        </div>
+
+        <div class="bundle-card">
+          <span class="bundle-card__eyebrow">Oster-Special &amp; drüber hinaus</span>
+          <h2 class="bundle-card__title">Spargummi XL Paket</h2>
+          <p class="bundle-card__desc">
+            Wähle jeweils ein Produkt aus Gleitgel, Feuchttüchern und Deo —
+            spare 10% auf den Gesamtpreis und erhalte einen
+            <strong>Eier Lecker gratis dazu</strong>. Perfekt für Ostern und darüber hinaus!
+          </p>
+
+          <div class="bundle-card__select-group">
+            <div class="bundle-card__select-item">
+              <div class="bundle-card__select-label">Gleitgel wählen</div>
+              <select id="bundleGel" aria-label="Gleitgel wählen">
+                <option value="Dickinator 3001|30">Dickinator 3001 — €30,00 / 100 ml</option>
+                <option value="Fickinator 2002|50">Fickinator 2002 — €50,00 / 1 L</option>
+                <option value="Pussy Penetrator 1001|99">Pussy Penetrator 1001 — €99,00 / 100 ml</option>
+              </select>
+            </div>
+            <div class="bundle-card__select-item">
+              <div class="bundle-card__select-label">Feuchttücher wählen</div>
+              <select id="bundleTuch" aria-label="Feuchttücher wählen">
+                <option value="Dünschiss Terminator|15">Dünschiss Terminator — €15,00</option>
+                <option value="Jack The Jizzer|20">Jack The Jizzer — €20,00</option>
+                <option value="Dick Destroyer|25">Dick Destroyer — €25,00</option>
+              </select>
+            </div>
+            <div class="bundle-card__select-item">
+              <div class="bundle-card__select-label">Deo wählen</div>
+              <select id="bundleDeo" aria-label="Deo wählen">
+                <option value="Monster Enjoyer 4002|12.99">Monster Enjoyer 4002 — €12,99</option>
+                <option value="Benziniator 5001|14.99">Benziniator 5001 — €14,99</option>
+                <option value="Desi Mesi 6006|19.99">Desi Mesi 6006 — €19,99</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="bundle-card__highlight">
+            <span class="bundle-card__tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18" aria-hidden="true"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
+              Eier Lecker — Gratis!
+            </span>
+            <span class="bundle-card__tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              10% Rabatt auf alles
+            </span>
+            <span class="bundle-card__tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              Perfekt für Ostern
+            </span>
+          </div>
+
+          <div style="margin-bottom:.75rem; font-size:1.1rem; font-weight:700;">
+            Gesamtpreis: <span id="bundlePrice">€51,83</span>
+            <span style="font-size:.85rem; font-weight:400; color: var(--text-muted,#888); text-decoration:line-through; margin-left:.5rem;" id="bundlePriceOld">€57,59</span>
+          </div>
+
+          <button class="btn btn--primary btn--lg" id="addBundleToCart" style="background:linear-gradient(135deg,#ff6b9d,#c44dff);border:none;">
+            XL Paket in den Warenkorb
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="footer" id="footer-bottom">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="/" class="logo logo--light" aria-label="Spargummi">
+          <img src="../images/logo.webp" alt="Spargummi" class="logo__img logo__img--light" width="853" height="259" />
+        </a>
+        <p class="footer__tagline">Fröhlich. Feucht. Ficken.</p>
+      </div>
+
+      <div class="footer__links-group">
+        <h4 class="footer__heading">Rechtliches</h4>
+        <ul class="footer__links">
+          <li><a href="#" class="footer__link">Impressum</a></li>
+          <li><a href="#" class="footer__link">Datenschutz</a></li>
+          <li><a href="#" class="footer__link">AGB</a></li>
+          <li><a href="#" class="footer__link">Widerrufsbelehrung</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__links-group">
+        <h4 class="footer__heading">FFF-Shop</h4>
+        <ul class="footer__links">
+          <li><a href="#gleitgel" class="footer__link">Gleitgel</a></li>
+          <li><a href="#tuecher" class="footer__link">Feuchttücher</a></li>
+          <li><a href="#deo" class="footer__link">Deo</a></li>
+          <li><a href="#bundle" class="footer__link">XL Paket</a></li>
+          <li><a href="/" class="footer__link">← Zum Hauptshop</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 Spargummi GmbH · FFF Care Kollektion · Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════ CART DRAWER ═══════════════ -->
+  <div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="cart-drawer__header">
+      <h2 class="cart-drawer__title">Warenkorb</h2>
+      <button class="cart-drawer__close" id="cartClose" aria-label="Close cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="cart-drawer__items" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+        <p>Dein Warenkorb ist leer.</p>
+        <a href="#shop" class="btn btn--primary" id="cartShopLink">Jetzt shoppen</a>
+      </div>
+    </div>
+    <div class="cart-drawer__footer" id="cartFooter" style="display:none">
+      <div class="cart-drawer__total">
+        <span>Gesamt</span>
+        <span id="cartTotal">€0,00</span>
+      </div>
+      <button class="btn btn--primary btn--full">Zur Kasse</button>
+      <p class="cart-drawer__note">Versandkostenfrei ab €15 · Diskrete Verpackung</p>
+    </div>
+  </aside>
+
+  <!-- ═══════════════ TOAST ═══════════════ -->
+  <div class="toast-container" id="toastContainer" aria-live="assertive" aria-atomic="true"></div>
+
+  <script src="../main.js" defer></script>
+  <script>
+    // ── Bundle Calculator ────────────────────────────
+    function calcBundle() {
+      const gel  = parseFloat(document.getElementById('bundleGel').value.split('|')[1]);
+      const tuch = parseFloat(document.getElementById('bundleTuch').value.split('|')[1]);
+      const deo  = parseFloat(document.getElementById('bundleDeo').value.split('|')[1]);
+      const total = gel + tuch + deo;
+      const discounted = total * 0.9;
+      const fmt = v => new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(v);
+      document.getElementById('bundlePrice').textContent = fmt(discounted);
+      document.getElementById('bundlePriceOld').textContent = fmt(total);
+    }
+
+    document.getElementById('bundleGel').addEventListener('change', calcBundle);
+    document.getElementById('bundleTuch').addEventListener('change', calcBundle);
+    document.getElementById('bundleDeo').addEventListener('change', calcBundle);
+
+    document.getElementById('addBundleToCart').addEventListener('click', function () {
+      const gelVal  = document.getElementById('bundleGel').value.split('|');
+      const tuchVal = document.getElementById('bundleTuch').value.split('|');
+      const deoVal  = document.getElementById('bundleDeo').value.split('|');
+      const total = (parseFloat(gelVal[1]) + parseFloat(tuchVal[1]) + parseFloat(deoVal[1])) * 0.9;
+      const name = `XL Paket (${gelVal[0]} + ${tuchVal[0]} + ${deoVal[0]} + Eier Lecker)`;
+      // Use the cart from main.js (loaded deferred — wait for DOMContentLoaded)
+      if (typeof cart !== 'undefined') {
+        cart.add(name, total.toFixed(2));
+        if (typeof UI !== 'undefined') UI.showToast('XL Paket + Eier Lecker hinzugefügt!');
+      }
+    });
+  </script>
+</body>
+</html>
