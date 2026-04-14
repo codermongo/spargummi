@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spargummi Tech — #Abspritzfähig!</title>
+  <meta name="description" content="Spargummi Tech — Unsere neue Produktreihe #Abspritzfähig! Anal-Technologie, vaginale Präzisionsinstrumente und professionelles Cum-Management." />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+
+  <style>
+    /* ── Tech Hero ── */
+    .tech-hero {
+      background: linear-gradient(135deg, #1a0a00 0%, #7c3d00 55%, #c87000 100%);
+      color: #fff;
+      padding: 7rem 0 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .tech-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 40px,
+        rgba(255,214,10,.04) 40px,
+        rgba(255,214,10,.04) 41px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 40px,
+        rgba(255,214,10,.04) 40px,
+        rgba(255,214,10,.04) 41px
+      );
+      pointer-events: none;
+    }
+    .tech-hero__eyebrow {
+      display: inline-block;
+      background: rgba(255,214,10,0.15);
+      border: 1px solid rgba(255,214,10,0.5);
+      border-radius: 999px;
+      padding: .25rem 1rem;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      color: #ffd60a;
+    }
+    .tech-hero__title {
+      font-size: clamp(2rem, 6vw, 3.75rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin: 0 0 .5rem;
+      text-shadow: 0 2px 24px rgba(200,112,0,.5);
+    }
+    .tech-hero__hashtag {
+      font-size: clamp(3rem, 9vw, 6rem);
+      font-weight: 900;
+      letter-spacing: -.02em;
+      display: block;
+      color: #ffd60a;
+      text-shadow: 0 0 40px rgba(255,214,10,.6);
+    }
+    .tech-hero__sub {
+      font-size: 1.1rem;
+      opacity: .85;
+      max-width: 540px;
+      margin: 1rem auto 2rem;
+      line-height: 1.7;
+    }
+    .tech-hero__badges {
+      display: flex;
+      gap: .75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .tech-hero__badge {
+      background: rgba(255,214,10,0.12);
+      border: 1px solid rgba(255,214,10,.4);
+      border-radius: 999px;
+      padding: .35rem .9rem;
+      font-size: .8rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    /* ── Tech accent on category border ── */
+    .shop-category--tech .shop-category__header {
+      border-bottom-color: #f4a100;
+    }
+    .shop-category--tech .shop-category__badge {
+      color: #7c3d00;
+      border-color: #f4a100;
+      background: #fff8e1;
+    }
+    .shop-category--tech .product-card__category {
+      color: #b35c00;
+    }
+    [data-theme="dark"] .shop-category--tech .shop-category__badge {
+      background: #2a1a00;
+      border-color: #f4a100;
+      color: #ffd60a;
+    }
+    [data-theme="dark"] .shop-category--tech .product-card__category {
+      color: #ffd60a;
+    }
+
+    /* ── Bundle cards ── */
+    .bundle-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+    @media (max-width: 768px) {
+      .bundle-grid { grid-template-columns: 1fr; }
+    }
+    .tech-bundle-card {
+      border-radius: 1.5rem;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .tech-bundle-card--mini {
+      background: linear-gradient(135deg, rgba(255,214,10,.1), rgba(244,161,0,.1));
+      border: 2px solid #f4a100;
+    }
+    .tech-bundle-card--mega {
+      background: linear-gradient(135deg, rgba(200,112,0,.14), rgba(255,214,10,.08));
+      border: 2px solid #c87000;
+    }
+    .tech-bundle-card__eyebrow {
+      display: inline-block;
+      border-radius: 999px;
+      padding: .3rem .9rem;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      color: #111;
+    }
+    .tech-bundle-card--mini .tech-bundle-card__eyebrow {
+      background: linear-gradient(135deg, #ffd60a, #f4a100);
+    }
+    .tech-bundle-card--mega .tech-bundle-card__eyebrow {
+      background: linear-gradient(135deg, #f4a100, #c87000);
+    }
+    .tech-bundle-card__title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin: 0 0 .5rem;
+    }
+    .tech-bundle-card__discount {
+      font-size: 2.5rem;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: .5rem;
+    }
+    .tech-bundle-card--mini .tech-bundle-card__discount { color: #f4a100; }
+    .tech-bundle-card--mega .tech-bundle-card__discount { color: #c87000; }
+    .tech-bundle-card__desc {
+      font-size: .9rem;
+      color: var(--gray-500);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    .tech-bundle-card__image {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .bundle-check-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .5rem;
+      margin-bottom: 1.25rem;
+      text-align: left;
+    }
+    .bundle-check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: .5rem;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: .6rem;
+      padding: .55rem .65rem;
+      cursor: pointer;
+      transition: border-color .15s, background .15s;
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--gray-800);
+      line-height: 1.3;
+    }
+    .bundle-check-item input[type="checkbox"] {
+      flex-shrink: 0;
+      margin-top: 1px;
+      accent-color: #f4a100;
+      width: 14px;
+      height: 14px;
+      cursor: pointer;
+    }
+    .bundle-check-item:has(input:checked) {
+      border-color: #f4a100;
+      background: #fff8e1;
+    }
+    .tech-bundle-card--mega .bundle-check-item:has(input:checked) {
+      border-color: #c87000;
+      background: #fff3cc;
+    }
+    [data-theme="dark"] .bundle-check-item {
+      background: var(--gray-100);
+      border-color: var(--gray-200);
+      color: var(--gray-800);
+    }
+    [data-theme="dark"] .bundle-check-item:has(input:checked) {
+      background: #2a1a00;
+    }
+    .bundle-price-row {
+      margin-bottom: .75rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+    .bundle-price-row__old {
+      font-size: .85rem;
+      font-weight: 400;
+      color: var(--gray-400);
+      text-decoration: line-through;
+      margin-left: .4rem;
+    }
+    .tech-btn--mini {
+      background: linear-gradient(135deg, #ffd60a, #f4a100);
+      border: none;
+      color: #111827;
+    }
+    .tech-btn--mega {
+      background: linear-gradient(135deg, #f4a100, #c87000);
+      border: none;
+      color: #111827;
+    }
+    .bundle-limit-note {
+      font-size: .72rem;
+      color: var(--gray-400);
+      margin-top: .6rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════ HEADER ═══════════════ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="/" class="logo" aria-label="Spargummi Home">
+        <img src="../images/logo.webp" alt="Spargummi" class="logo__img" width="853" height="259" fetchpriority="high" />
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Hauptnavigation">
+        <ul class="nav__list">
+          <li><a href="#anal" class="nav__link">Anal-Tech</a></li>
+          <li><a href="#vaginal" class="nav__link">Vaginal-Tech</a></li>
+          <li><a href="#cum" class="nav__link">Cum-Management</a></li>
+          <li><a href="#bundle" class="nav__link">Pakete</a></li>
+          <li><a href="/" class="nav__link">← Zum Shop</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Farbschema wechseln">
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button class="cart-btn" id="cartBtn" aria-label="Warenkorb">
+          <svg class="cart-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <span class="cart-btn__count" id="cartCount" aria-live="polite">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════ TECH HERO ═══════════════ -->
+  <section class="tech-hero">
+    <div class="container">
+      <span class="tech-hero__eyebrow">Spargummi Tech — Neue Produktreihe</span>
+      <h1 class="tech-hero__title">
+        Unsere neue Produktreihe
+        <span class="tech-hero__hashtag">#Abspritzfähig!</span>
+      </h1>
+      <p class="tech-hero__sub">
+        Hightech trifft auf Trieb. Präzisionsgefertigte Lustinstrumente, bluetooth-gesteuerte Anal-Apparate
+        und professionelles Cum-Management für den anspruchsvollen Verbraucher.
+      </p>
+      <div class="tech-hero__badges">
+        <span class="tech-hero__badge">🔧 Anal-Technologie</span>
+        <span class="tech-hero__badge">⚡ Vaginal-Präzision</span>
+        <span class="tech-hero__badge">💦 Cum-Management</span>
+        <span class="tech-hero__badge">📦 Sparpakete</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SHOP ═══════════════ -->
+  <section class="shop" id="shop">
+    <div class="container">
+
+      <!-- ── Kategorie 1: Anal-Technologie ── -->
+      <div class="shop-category shop-category--tech" id="anal">
+        <div class="shop-category__header">
+          <div class="shop-category__header-text">
+            <h3 class="shop-category__title">Affenstarke Anal-Produkte von unseren Archäologen</h3>
+            <p class="shop-category__desc">Tief graben, tiefer bohren — die Wissenschaft des Hintereingangs</p>
+          </div>
+          <span class="shop-category__badge">3 Produkte</span>
+        </div>
+        <div class="product-grid">
+
+          <article class="product-card" data-product-id="anal-rasierer-aaa">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/1.png" alt="Anal-Rasierer AAA" loading="eager" width="400" height="220" />
+              </div>
+              <span class="product-card__badge product-card__badge--new">Bluetooth</span>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Anal-Technologie</span>
+              <h3 class="product-card__title">Anal-Rasierer AAA</h3>
+              <p class="product-card__desc">
+                Anal-Plug mit Remote-Vibration und integrierter Selbstreinigung.
+                Steuerbar per Bluetooth oder Rauchzeichen — auch kompatibel mit Handscannern.
+              </p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€25,00</span>
+                  <span class="product-card__unit">/ Stk.</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Anal-Rasierer AAA" data-price="25.00">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="hintereingang-maurer-bbb">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/2.jpg" alt="Hintereingang-Maurer BBB" loading="lazy" width="400" height="220" />
+              </div>
+              <span class="product-card__badge">Sprachsteuerung</span>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Anal-Technologie</span>
+              <h3 class="product-card__title">Hintereingang-Maurer BBB</h3>
+              <p class="product-card__desc">
+                Anal-Plug mit einstellbarer Dicke und Größe — maßgeschneidert für jeden Eingang.
+                Steuerbar per Bluetooth und Sprachkommandos.
+              </p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€30,00</span>
+                  <span class="product-card__unit">/ Stk.</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Hintereingang-Maurer BBB" data-price="30.00">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="arschinator-penetrator-ccc">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/3.jpg" alt="Arschinator Penetrator CCC" loading="lazy" width="400" height="220" />
+              </div>
+              <span class="product-card__badge product-card__badge--xxl">Profi</span>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Anal-Technologie Premium</span>
+              <h3 class="product-card__title">Arschinator Penetrator CCC</h3>
+              <p class="product-card__desc">
+                Anal-Plug mit Schlagbohrfunktion — perfekt für Kernbohrungen oder Renovierungsarbeiten.
+                Auch als Ersatz für fehlende Werkzeuge geeignet.
+              </p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€40,00</span>
+                  <span class="product-card__unit">/ Stk.</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Arschinator Penetrator CCC" data-price="40.00">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- ── Kategorie 2: Vaginaler Vagina-Spaß ── -->
+      <div class="shop-category shop-category--tech" id="vaginal">
+        <div class="shop-category__header">
+          <div class="shop-category__header-text">
+            <h3 class="shop-category__title">Vaginaler Vagina-Spaß!</h3>
+            <p class="shop-category__desc">Präzisionsinstrumente für den weiblichen Eingangsbereich</p>
+          </div>
+          <span class="shop-category__badge">3 Produkte</span>
+        </div>
+        <div class="product-grid">
+
+          <article class="product-card" data-product-id="horse-cock-hoch-2">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/4.png" alt="Horse Cock hoch 2" loading="lazy" width="400" height="220" />
+              </div>
+              <span class="product-card__badge product-card__badge--new">Ab 10 cm</span>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Vaginal-Technologie</span>
+              <h3 class="product-card__title">Horse Cock hoch 2</h3>
+              <p class="product-card__desc">
+                20&thinsp;cm Dildo — Länge und Breite identisch. Erhältlich in den Varianten 10, 20, 30, 40 und 50&thinsp;cm.
+                Einfache Preisgestaltung: 0,50&thinsp;€ pro Zentimeter.
+              </p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">ab €5,00</span>
+                  <span class="product-card__unit">/ 0,50€ pro cm</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Horse Cock hoch 2 (20 cm)" data-price="10.00">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="beben-beber">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/5.png" alt="Beben-Beber" loading="lazy" width="400" height="220" />
+              </div>
+              <span class="product-card__badge">Richter 3,1</span>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Vaginal-Technologie</span>
+              <h3 class="product-card__title">Beben-Beber</h3>
+              <p class="product-card__desc">
+                Vibrator mit Remote-Funktion und Stimmsteuerung. Löst nachweislich ein Erdbeben der Stärke 3,1 aus.
+                Nicht im Umkreis tektonischer Platten zu empfehlen.
+              </p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€25,00</span>
+                  <span class="product-card__unit">/ Stk.</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Beben-Beber" data-price="25.00">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="japanischer-spass">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/6.png" alt="Japanischer Spaß" loading="lazy" width="400" height="220" />
+              </div>
+              <span class="product-card__badge product-card__badge--xxl">600 L Kapazität</span>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Vaginal-Technologie Premium</span>
+              <h3 class="product-card__title">Japanischer Spaß</h3>
+              <p class="product-card__desc">
+                Tentakel-Dildo mit bis zu 600&thinsp;Litern Cum-Kapazität (natürlich oder synthetisch).
+                Hält bis zu 100&thinsp;Meter Tentakel. Mehrere Nutzer gleichzeitig möglich.
+              </p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">ab €1,00</span>
+                  <span class="product-card__unit">/ Meter Tentakel</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Japanischer Spaß (10 m)" data-price="10.00">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- ── Kategorie 3: Cum-Management ── -->
+      <div class="shop-category shop-category--tech" id="cum">
+        <div class="shop-category__header">
+          <div class="shop-category__header-text">
+            <h3 class="shop-category__title">Professionelles Cum-Management</h3>
+            <p class="shop-category__desc">Fördern, sammeln, recyceln — nachhaltige Lösungen für die ganze Familie</p>
+          </div>
+          <span class="shop-category__badge">3 Produkte</span>
+        </div>
+        <div class="product-grid">
+
+          <article class="product-card" data-product-id="dick-dicker-ficker">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/7.png" alt="Dick Dicker Ficker" loading="lazy" width="400" height="220" />
+              </div>
+              <span class="product-card__badge product-card__badge--new">1000 L</span>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Cum-Management</span>
+              <h3 class="product-card__title">Dick Dicker Ficker</h3>
+              <p class="product-card__desc">
+                Bukakke-Party für die ganze Familie! 1.000&thinsp;Liter Cum in 3 verschiedenen Geschmacksrichtungen —
+                inklusive der Exklusivsorte <em>Cum de Español</em>.
+              </p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€100,00</span>
+                  <span class="product-card__unit">/ 1000 L</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Dick Dicker Ficker" data-price="100.00">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="dickinator-fickator">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/8.jpg" alt="Dickinator Fickator" loading="lazy" width="400" height="220" />
+              </div>
+              <span class="product-card__badge">Recycling</span>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Cum-Management</span>
+              <h3 class="product-card__title">Dickinator Fickator</h3>
+              <p class="product-card__desc">
+                Sammelt Cum ein — als Spende oder direkt aus Ritzen.
+                Recycelt ihn zu hochwertigem Protein-Pulver oder stellt neues Cum her,
+                das als Industrie-Kleber eingesetzt werden kann.
+              </p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€45,00</span>
+                  <span class="product-card__unit">/ Gerät</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Dickinator Fickator" data-price="45.00">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="cum-extraktor">
+            <div class="product-card__image-wrap">
+              <div class="product-card__image">
+                <img src="images/9.jpg" alt="Cum-Extraktor" loading="lazy" width="400" height="220" />
+              </div>
+              <span class="product-card__badge product-card__badge--xxl">Restfrei</span>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__category">Cum-Management Premium</span>
+              <h3 class="product-card__title">Cum-Extraktor</h3>
+              <p class="product-card__desc">
+                Macht was er soll: Cum restlos aus allen Ecken, Winkeln, Menschen und Tieren entfernen.
+                Gerät inkl. 1&thinsp;L Reinigungsmittel. Nachfüllpackungen separat erhältlich.
+              </p>
+              <div class="product-card__footer">
+                <div class="product-card__pricing">
+                  <span class="product-card__price">€150,00</span>
+                  <span class="product-card__unit">Gerät · €15/L Reiniger</span>
+                </div>
+                <button class="btn btn--primary add-to-cart" data-name="Cum-Extraktor" data-price="150.00">In den Warenkorb</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- ── Sonderangebote: Pakete ── -->
+      <div class="shop-category shop-category--tech" id="bundle">
+        <div class="shop-category__header">
+          <div class="shop-category__header-text">
+            <h3 class="shop-category__title">Sonderangebote — Paket-Schnürer</h3>
+            <p class="shop-category__desc">Mehr bestellen, mehr sparen — dein Abspritz-Paket wartet</p>
+          </div>
+          <span class="shop-category__badge">2 Pakete</span>
+        </div>
+
+        <div class="bundle-grid">
+
+          <!-- Mini-Paket: bis zu 3 Produkte, 10% -->
+          <div class="tech-bundle-card tech-bundle-card--mini">
+            <span class="tech-bundle-card__eyebrow">Mini-Schnürer</span>
+            <div class="tech-bundle-card__discount">10%</div>
+            <h2 class="tech-bundle-card__title">3er Abspritz-Paket</h2>
+            <img src="images/10.png" alt="Mini-Paket Sonderangebot" class="tech-bundle-card__image" loading="lazy" />
+            <p class="tech-bundle-card__desc">
+              Wähle bis zu 3 Produkte aus unserem Sortiment und spare 10% auf den Gesamtpreis.
+            </p>
+
+            <div class="bundle-check-grid" id="miniCheckGrid">
+              <label class="bundle-check-item"><input type="checkbox" class="mini-check" data-name="Anal-Rasierer AAA" data-price="25" /> Anal-Rasierer AAA<br><small style="font-weight:400;color:var(--gray-400)">€25,00</small></label>
+              <label class="bundle-check-item"><input type="checkbox" class="mini-check" data-name="Hintereingang-Maurer BBB" data-price="30" /> Hintereingang-Maurer BBB<br><small style="font-weight:400;color:var(--gray-400)">€30,00</small></label>
+              <label class="bundle-check-item"><input type="checkbox" class="mini-check" data-name="Arschinator Penetrator CCC" data-price="40" /> Arschinator Penetrator CCC<br><small style="font-weight:400;color:var(--gray-400)">€40,00</small></label>
+              <label class="bundle-check-item"><input type="checkbox" class="mini-check" data-name="Horse Cock hoch 2" data-price="10" /> Horse Cock hoch 2<br><small style="font-weight:400;color:var(--gray-400)">ab €5,00</small></label>
+              <label class="bundle-check-item"><input type="checkbox" class="mini-check" data-name="Beben-Beber" data-price="25" /> Beben-Beber<br><small style="font-weight:400;color:var(--gray-400)">€25,00</small></label>
+              <label class="bundle-check-item"><input type="checkbox" class="mini-check" data-name="Japanischer Spaß" data-price="10" /> Japanischer Spaß<br><small style="font-weight:400;color:var(--gray-400)">ab €1/m</small></label>
+              <label class="bundle-check-item"><input type="checkbox" class="mini-check" data-name="Dick Dicker Ficker" data-price="100" /> Dick Dicker Ficker<br><small style="font-weight:400;color:var(--gray-400)">€100,00</small></label>
+              <label class="bundle-check-item"><input type="checkbox" class="mini-check" data-name="Dickinator Fickator" data-price="45" /> Dickinator Fickator<br><small style="font-weight:400;color:var(--gray-400)">€45,00</small></label>
+              <label class="bundle-check-item"><input type="checkbox" class="mini-check" data-name="Cum-Extraktor" data-price="150" /> Cum-Extraktor<br><small style="font-weight:400;color:var(--gray-400)">€150,00</small></label>
+            </div>
+
+            <div class="bundle-price-row">
+              Gesamt: <span id="miniPrice">€0,00</span>
+              <span class="bundle-price-row__old" id="miniPriceOld"></span>
+            </div>
+            <button class="btn btn--primary btn--lg tech-btn--mini" id="addMiniBundle">3er Paket in den Warenkorb</button>
+            <p class="bundle-limit-note">Maximal 3 Produkte wählbar · 10% Rabatt</p>
+          </div>
+
+          <!-- Mega-Paket: bis zu 5 Produkte, 17,5% -->
+          <div class="tech-bundle-card tech-bundle-card--mega">
+            <span class="tech-bundle-card__eyebrow">Mega-Schnürer</span>
+            <div class="tech-bundle-card__discount">17,5%</div>
+            <h2 class="tech-bundle-card__title">5er Abspritz-Paket</h2>
+            <img src="images/11.png" alt="Mega-Paket Sonderangebot" class="tech-bundle-card__image" loading="lazy" />
+            <p class="tech-bundle-card__desc">
+              Wähle bis zu 5 Produkte und spare satte 17,5% auf den Gesamtpreis.
+            </p>
+
+            <div class="bundle-check-grid" id="megaCheckGrid">
+              <label class="bundle-check-item"><input type="checkbox" class="mega-check" data-name="Anal-Rasierer AAA" data-price="25" /> Anal-Rasierer AAA<br><small style="font-weight:400;color:var(--gray-400)">€25,00</small></label>
+              <label class="bundle-check-item"><input type="checkbox" class="mega-check" data-name="Hintereingang-Maurer BBB" data-price="30" /> Hintereingang-Maurer BBB<br><small style="font-weight:400;color:var(--gray-400)">€30,00</small></label>
+              <label class="bundle-check-item"><input type="checkbox" class="mega-check" data-name="Arschinator Penetrator CCC" data-price="40" /> Arschinator Penetrator CCC<br><small style="font-weight:400;color:var(--gray-400)">€40,00</small></label>
+              <label class="bundle-check-item"><input type="checkbox" class="mega-check" data-name="Horse Cock hoch 2" data-price="10" /> Horse Cock hoch 2<br><small style="font-weight:400;color:var(--gray-400)">ab €5,00</small></label>
+              <label class="bundle-check-item"><input type="checkbox" class="mega-check" data-name="Beben-Beber" data-price="25" /> Beben-Beber<br><small style="font-weight:400;color:var(--gray-400)">€25,00</small></label>
+              <label class="bundle-check-item"><input type="checkbox" class="mega-check" data-name="Japanischer Spaß" data-price="10" /> Japanischer Spaß<br><small style="font-weight:400;color:var(--gray-400)">ab €1/m</small></label>
+              <label class="bundle-check-item"><input type="checkbox" class="mega-check" data-name="Dick Dicker Ficker" data-price="100" /> Dick Dicker Ficker<br><small style="font-weight:400;color:var(--gray-400)">€100,00</small></label>
+              <label class="bundle-check-item"><input type="checkbox" class="mega-check" data-name="Dickinator Fickator" data-price="45" /> Dickinator Fickator<br><small style="font-weight:400;color:var(--gray-400)">€45,00</small></label>
+              <label class="bundle-check-item"><input type="checkbox" class="mega-check" data-name="Cum-Extraktor" data-price="150" /> Cum-Extraktor<br><small style="font-weight:400;color:var(--gray-400)">€150,00</small></label>
+            </div>
+
+            <div class="bundle-price-row">
+              Gesamt: <span id="megaPrice">€0,00</span>
+              <span class="bundle-price-row__old" id="megaPriceOld"></span>
+            </div>
+            <button class="btn btn--primary btn--lg tech-btn--mega" id="addMegaBundle">5er Paket in den Warenkorb</button>
+            <p class="bundle-limit-note">Maximal 5 Produkte wählbar · 17,5% Rabatt</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="footer" id="footer-bottom">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="/" class="logo logo--light" aria-label="Spargummi">
+          <img src="../images/logo.webp" alt="Spargummi" class="logo__img logo__img--light" width="853" height="259" />
+        </a>
+        <p class="footer__tagline">#Abspritzfähig — Spargummi Tech</p>
+      </div>
+
+      <div class="footer__links-group">
+        <h4 class="footer__heading">Rechtliches</h4>
+        <ul class="footer__links">
+          <li><a href="#" class="footer__link">Impressum</a></li>
+          <li><a href="#" class="footer__link">Datenschutz</a></li>
+          <li><a href="#" class="footer__link">AGB</a></li>
+          <li><a href="#" class="footer__link">Widerrufsbelehrung</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__links-group">
+        <h4 class="footer__heading">Tech-Shop</h4>
+        <ul class="footer__links">
+          <li><a href="#anal" class="footer__link">Anal-Technologie</a></li>
+          <li><a href="#vaginal" class="footer__link">Vaginal-Technologie</a></li>
+          <li><a href="#cum" class="footer__link">Cum-Management</a></li>
+          <li><a href="#bundle" class="footer__link">Pakete</a></li>
+          <li><a href="/" class="footer__link">← Zum Hauptshop</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 Spargummi GmbH · Tech Kollektion · Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════ CART DRAWER ═══════════════ -->
+  <div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Warenkorb" aria-hidden="true">
+    <div class="cart-drawer__header">
+      <h2 class="cart-drawer__title">Warenkorb</h2>
+      <button class="cart-drawer__close" id="cartClose" aria-label="Warenkorb schließen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="cart-drawer__items" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+        <p>Dein Warenkorb ist leer.</p>
+        <a href="#shop" class="btn btn--primary" id="cartShopLink">Jetzt shoppen</a>
+      </div>
+    </div>
+    <div class="cart-drawer__footer" id="cartFooter" style="display:none">
+      <div class="cart-drawer__total">
+        <span>Gesamt</span>
+        <span id="cartTotal">€0,00</span>
+      </div>
+      <button class="btn btn--primary btn--full">Zur Kasse</button>
+      <p class="cart-drawer__note">Versandkostenfrei ab €15 · Diskrete Verpackung</p>
+    </div>
+  </aside>
+
+  <!-- ═══════════════ TOAST ═══════════════ -->
+  <div class="toast-container" id="toastContainer" aria-live="assertive" aria-atomic="true"></div>
+
+  <script src="../main.js" defer></script>
+  <script>
+    const fmt = v => new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(v);
+
+    // ── Generic bundle handler ─────────────────────────────
+    function setupBundle({ checkClass, maxItems, discount, priceEl, oldPriceEl, btnEl, bundleName }) {
+      const checks = () => [...document.querySelectorAll('.' + checkClass)];
+
+      function update() {
+        const selected = checks().filter(c => c.checked);
+        const total = selected.reduce((s, c) => s + parseFloat(c.dataset.price), 0);
+        const discounted = total * (1 - discount);
+        priceEl.textContent = total > 0 ? fmt(discounted) : '€0,00';
+        if (total > 0) {
+          oldPriceEl.textContent = fmt(total);
+        } else {
+          oldPriceEl.textContent = '';
+        }
+        // Disable unchecked boxes when limit reached
+        checks().forEach(c => {
+          if (!c.checked) c.disabled = selected.length >= maxItems;
+        });
+      }
+
+      checks().forEach(c => c.addEventListener('change', update));
+
+      btnEl.addEventListener('click', function () {
+        const selected = checks().filter(c => c.checked);
+        if (selected.length === 0) {
+          if (typeof UI !== 'undefined') UI.showToast('Bitte mindestens 1 Produkt auswählen!');
+          return;
+        }
+        const total = selected.reduce((s, c) => s + parseFloat(c.dataset.price), 0) * (1 - discount);
+        const names = selected.map(c => c.dataset.name).join(' + ');
+        const label = `${bundleName} (${names})`;
+        if (typeof cart !== 'undefined') {
+          cart.add(label, total.toFixed(2));
+          if (typeof UI !== 'undefined') UI.showToast(`${bundleName} hinzugefügt!`);
+        }
+      });
+    }
+
+    // Wait for main.js cart to be ready
+    window.addEventListener('DOMContentLoaded', function () {
+      setupBundle({
+        checkClass: 'mini-check',
+        maxItems: 3,
+        discount: 0.10,
+        priceEl: document.getElementById('miniPrice'),
+        oldPriceEl: document.getElementById('miniPriceOld'),
+        btnEl: document.getElementById('addMiniBundle'),
+        bundleName: '3er Abspritz-Paket'
+      });
+
+      setupBundle({
+        checkClass: 'mega-check',
+        maxItems: 5,
+        discount: 0.175,
+        priceEl: document.getElementById('megaPrice'),
+        oldPriceEl: document.getElementById('megaPriceOld'),
+        btnEl: document.getElementById('addMegaBundle'),
+        bundleName: '5er Abspritz-Paket'
+      });
+    });
+  </script>
+</body>
+</html>
