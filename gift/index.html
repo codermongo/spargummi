@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Geschenke – Gutscheine &amp; Produkt-Pakete | Spargummi</title>
+  <meta name="description" content="Perfekte Geschenke für Geburtstag, Scheidung und Beerdigung — Gutscheine und Produkt-Pakete von Spargummi. Sparen und trotzdem großzügig sein." />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+
+  <style>
+    /* ── Gift Hero ── */
+    .gift-hero {
+      background: linear-gradient(135deg, #f59e0b 0%, #f97316 40%, #ef4444 100%);
+      color: #fff;
+      padding: 7rem 0 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .gift-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M30 10 L35 25 L50 25 L38 34 L43 49 L30 40 L17 49 L22 34 L10 25 L25 25 Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+      pointer-events: none;
+    }
+    .gift-hero__eyebrow {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 999px;
+      padding: .25rem 1rem;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .gift-hero__title {
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin: 0 0 .5rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,.25);
+    }
+    .gift-hero__abbr {
+      font-size: clamp(3rem, 9vw, 5.5rem);
+      font-weight: 900;
+      letter-spacing: -.02em;
+      display: block;
+      opacity: .95;
+    }
+    .gift-hero__sub {
+      font-size: 1.1rem;
+      opacity: .9;
+      max-width: 560px;
+      margin: 1rem auto 2rem;
+      line-height: 1.6;
+    }
+    .gift-hero__tagline {
+      margin-top: 1.5rem;
+      font-size: .8rem;
+      opacity: .7;
+    }
+    .gift-hero__tagline a {
+      color: #fff;
+      text-decoration: underline;
+      opacity: .85;
+    }
+    .gift-hero__badges {
+      display: flex;
+      gap: .75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .gift-hero__badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,.4);
+      border-radius: 999px;
+      padding: .35rem .9rem;
+      font-size: .8rem;
+      font-weight: 600;
+    }
+
+    /* ── Voucher Cards ── */
+    .voucher-card {
+      background: linear-gradient(135deg, #f59e0b18, #ef444418);
+      border: 2px solid #f97316;
+      border-radius: 1.5rem;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .voucher-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(249,115,22,.2);
+    }
+    .voucher-card__image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .voucher-card__body {
+      padding: 1.75rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .voucher-card__eyebrow {
+      display: inline-block;
+      background: linear-gradient(135deg, #f59e0b, #ef4444);
+      color: #fff;
+      border-radius: 999px;
+      padding: .25rem .8rem;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      margin-bottom: .9rem;
+      align-self: flex-start;
+    }
+    .voucher-card__title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin: 0 0 .5rem;
+    }
+    .voucher-card__desc {
+      color: var(--text-muted, #666);
+      font-size: .95rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      flex: 1;
+    }
+    .voucher-card__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      margin-bottom: 1.25rem;
+    }
+    .voucher-card__tag {
+      background: var(--surface-2, #f5f5f5);
+      border-radius: 999px;
+      padding: .2rem .65rem;
+      font-size: .75rem;
+      font-weight: 600;
+      color: var(--text-muted, #555);
+    }
+    .voucher-card__pricing {
+      display: flex;
+      align-items: baseline;
+      gap: .6rem;
+      margin-bottom: 1rem;
+    }
+    .voucher-card__price {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #ef4444;
+    }
+    .voucher-card__original {
+      font-size: 1rem;
+      text-decoration: line-through;
+      color: var(--text-muted, #999);
+    }
+    .voucher-card__save {
+      background: #ef4444;
+      color: #fff;
+      border-radius: 999px;
+      padding: .15rem .5rem;
+      font-size: .7rem;
+      font-weight: 700;
+    }
+    .voucher-card__footer-note {
+      font-size: .72rem;
+      color: var(--text-muted, #aaa);
+      margin-top: .75rem;
+      line-height: 1.5;
+    }
+
+    /* ── Product Bundle Cards ── */
+    .product-bundle-card {
+      background: var(--surface-2, #f8f8f8);
+      border: 1.5px solid var(--border, #e5e5e5);
+      border-radius: 1.5rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .product-bundle-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,.1);
+    }
+    .product-bundle-card__image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .product-bundle-card__body {
+      padding: 1.75rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-bundle-card__eyebrow {
+      display: inline-block;
+      background: var(--surface, #eee);
+      border-radius: 999px;
+      padding: .25rem .8rem;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      margin-bottom: .9rem;
+      align-self: flex-start;
+      color: var(--text-muted, #666);
+    }
+    .product-bundle-card__title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin: 0 0 .5rem;
+    }
+    .product-bundle-card__desc {
+      color: var(--text-muted, #666);
+      font-size: .95rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      flex: 1;
+    }
+    .product-bundle-card__categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      margin-bottom: 1.25rem;
+    }
+    .product-bundle-card__cat {
+      background: linear-gradient(135deg, #f59e0b22, #ef444422);
+      border: 1px solid #f97316;
+      border-radius: 999px;
+      padding: .2rem .65rem;
+      font-size: .75rem;
+      font-weight: 600;
+      color: #f97316;
+    }
+    .product-bundle-card__pricing {
+      display: flex;
+      align-items: baseline;
+      gap: .6rem;
+      margin-bottom: 1rem;
+    }
+    .product-bundle-card__price {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #ef4444;
+    }
+    .product-bundle-card__original {
+      font-size: 1rem;
+      text-decoration: line-through;
+      color: var(--text-muted, #999);
+    }
+    .product-bundle-card__save {
+      background: #ef4444;
+      color: #fff;
+      border-radius: 999px;
+      padding: .15rem .5rem;
+      font-size: .7rem;
+      font-weight: 700;
+    }
+    .product-bundle-card__footer-note {
+      font-size: .72rem;
+      color: var(--text-muted, #aaa);
+      margin-top: .75rem;
+      line-height: 1.5;
+    }
+
+    /* ── Voucher Grid ── */
+    .voucher-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* ── Fine Print Section ── */
+    .fine-print-box {
+      background: var(--surface-2, #f5f5f5);
+      border: 1px dashed var(--border, #ddd);
+      border-radius: .75rem;
+      padding: 1rem 1.5rem;
+      margin-top: 2rem;
+    }
+    .fine-print-box__title {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--text-muted, #999);
+      margin-bottom: .5rem;
+    }
+    .fine-print-box p {
+      font-size: .75rem;
+      color: var(--text-muted, #aaa);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ── Kombi-Deal Bundle ── */
+    .kombideal-card {
+      background: linear-gradient(135deg, #f59e0b18, #ef444418);
+      border: 2px solid #f97316;
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+      margin-top: 2.5rem;
+      text-align: center;
+    }
+    .kombideal-card__eyebrow {
+      display: inline-block;
+      background: linear-gradient(135deg, #f59e0b, #ef4444);
+      color: #fff;
+      border-radius: 999px;
+      padding: .3rem .9rem;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .kombideal-card__title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin: 0 0 .75rem;
+    }
+    .kombideal-card__desc {
+      color: var(--text-muted, #666);
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .kombideal-card__select-group {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+    .kombideal-card__select-item {
+      background: var(--surface-2, #f5f5f5);
+      border-radius: .75rem;
+      padding: 1rem;
+    }
+    .kombideal-card__select-label {
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: #f97316;
+      margin-bottom: .5rem;
+    }
+    .kombideal-card__select-item select {
+      width: 100%;
+      border: 1px solid var(--border, #ddd);
+      border-radius: .5rem;
+      padding: .45rem .65rem;
+      font-family: inherit;
+      font-size: .9rem;
+      background: var(--surface, #fff);
+      color: var(--text, #111);
+      cursor: pointer;
+    }
+    .kombideal-card__highlight {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    .kombideal-card__tag {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      font-weight: 700;
+      font-size: .95rem;
+    }
+    .kombideal-card__tag svg {
+      color: #f97316;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════ HEADER ═══════════════ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="/" class="logo" aria-label="Spargummi Home">
+        <img src="../images/logo.webp" alt="Spargummi" class="logo__img" width="853" height="259" fetchpriority="high" />
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li><a href="#gutscheine" class="nav__link">Gutscheine</a></li>
+          <li><a href="#pakete" class="nav__link">Produkt-Pakete</a></li>
+          <li><a href="#kombi" class="nav__link">Kombi-Deal</a></li>
+          <li><a href="/" class="nav__link">← Zum Shop</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Farbschema wechseln">
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button class="cart-btn" id="cartBtn" aria-label="Shopping cart">
+          <svg class="cart-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <span class="cart-btn__count" id="cartCount" aria-live="polite">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════ GIFT HERO ═══════════════ -->
+  <section class="gift-hero">
+    <div class="container">
+      <span class="gift-hero__eyebrow">Spargummi Geschenke-Kollektion</span>
+      <h1 class="gift-hero__title">
+        Wenn wir sparen, solltest du auch sparen —
+        <span class="gift-hero__abbr">Spargummi</span>
+      </h1>
+      <p class="gift-hero__tagline" style="font-size:.95rem; opacity:.85; margin-bottom:1.5rem;">
+        © <a href="/team/" style="color:#fff; text-decoration:underline; font-weight:600;">Spruch unseres Marketing Managers</a>
+      </p>
+      <p class="gift-hero__sub">
+        Mit unserer neuesten Erfindung kannst du nicht nur zu jeder Scheidung, Beerdigung und
+        jedem Geburtstag das perfekte Geschenk mitbringen — sondern auch gleich ordentlich dabei
+        sparen. Und zwar Geld, nicht an der Qualität.
+      </p>
+      <div class="gift-hero__badges">
+        <span class="gift-hero__badge">🎁 Gutscheine</span>
+        <span class="gift-hero__badge">📦 Produkt-Pakete</span>
+        <span class="gift-hero__badge">💸 Bis zu 15€ sparen</span>
+        <span class="gift-hero__badge">🎀 Geschenkverpackung</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SHOP ═══════════════ -->
+  <section class="shop" id="shop">
+    <div class="container">
+
+      <!-- ══ Sektion 1: Gutscheine ══ -->
+      <div class="shop-category" id="gutscheine">
+        <div class="shop-category__header">
+          <div class="shop-category__header-text">
+            <h2 class="shop-category__title">Gutscheine — Voucher</h2>
+            <p class="shop-category__desc">
+              Unsere Gutscheine ermöglichen es dir, deinen Liebsten und Unliebsten
+              das beste Geschenk zu unterbreiten — passend zu jeder Bestellung.
+            </p>
+          </div>
+          <span class="shop-category__badge">3 Gutscheine</span>
+        </div>
+
+        <div class="voucher-grid">
+
+          <!-- Gutschein 1 -->
+          <div class="voucher-card">
+            <img src="images/1.jpg" alt="Premium Sperma-Sparer Gutschein" class="voucher-card__image" loading="lazy" width="400" height="200" />
+            <div class="voucher-card__body">
+              <span class="voucher-card__eyebrow">Einsteiger</span>
+              <h3 class="voucher-card__title">Premium Sperma-Sparer</h3>
+              <p class="voucher-card__desc">
+                Der ideale Einstieg ins Spargummi-Universum. Einlösbar in der FFF-Pflegekollektion
+                und im Care-Bereich — für alle, die sparsam und trotzdem feucht durch den Alltag kommen wollen.
+              </p>
+              <div class="voucher-card__tags">
+                <span class="voucher-card__tag">FFF Care</span>
+                <span class="voucher-card__tag">Gleitgel</span>
+                <span class="voucher-card__tag">Feuchttücher</span>
+                <span class="voucher-card__tag">Deo</span>
+              </div>
+              <div class="voucher-card__pricing">
+                <span class="voucher-card__price">33 €</span>
+                <span class="voucher-card__original">40 € Warenwert</span>
+                <span class="voucher-card__save">7 € sparen</span>
+              </div>
+              <button class="btn btn--primary add-to-cart" data-name="Premium Sperma-Sparer Gutschein (40€)" data-price="33.00">
+                Gutschein kaufen
+              </button>
+            </div>
+          </div>
+
+          <!-- Gutschein 2 -->
+          <div class="voucher-card" style="border-color:#ef4444;">
+            <img src="images/2.jpg" alt="VIP Einschuss-Ticket Gutschein" class="voucher-card__image" style="object-fit:contain; background:#f8f8f8;" loading="lazy" width="400" height="200" />
+            <div class="voucher-card__body">
+              <span class="voucher-card__eyebrow" style="background:linear-gradient(135deg,#ef4444,#f97316);">VIP</span>
+              <h3 class="voucher-card__title">VIP Einschuss-Ticket</h3>
+              <p class="voucher-card__desc">
+                Für den anspruchsvollen Beschenkten. Einlösbar in allen Kategorien des gesamten
+                Spargummi-Sortiments — plus eine frei wählbare Geschenkverpackung obendrauf.
+                Weil echter VIP-Status auch beim Auspacken beginnt.
+              </p>
+              <div class="voucher-card__tags">
+                <span class="voucher-card__tag">Alle Kategorien</span>
+                <span class="voucher-card__tag">Geschenkverpackung inklusive</span>
+              </div>
+              <div class="voucher-card__pricing">
+                <span class="voucher-card__price">55 €</span>
+                <span class="voucher-card__original">60 € Warenwert</span>
+                <span class="voucher-card__save">5 € sparen</span>
+              </div>
+              <button class="btn btn--primary add-to-cart" data-name="VIP Einschuss-Ticket Gutschein (60€)" data-price="55.00">
+                Gutschein kaufen
+              </button>
+            </div>
+          </div>
+
+          <!-- Gutschein 3 -->
+          <div class="voucher-card" style="border-color:#7c3aed;">
+            <img src="images/3.jpg" alt="Deluxe Dünschiss Hyper XL Pro Max Ultra Giga Gutschein" class="voucher-card__image" style="object-fit:contain; background:#f8f8f8;" loading="lazy" width="400" height="200" />
+            <div class="voucher-card__body">
+              <span class="voucher-card__eyebrow" style="background:linear-gradient(135deg,#7c3aed,#ef4444);">Deluxe</span>
+              <h3 class="voucher-card__title">Deluxe Dünschiss Hyper XL Pro Max Ultra Giga</h3>
+              <p class="voucher-card__desc">
+                Das Non-Plus-Ultra unter unseren Gutscheinen. Einlösbar in allen Kategorien des
+                gesamten Sortiments, frei wählbare Premiumverpackung — und auf Wunsch sogar mit
+                einem eigenen Motiv bedruckt. Für den Menschen, der alles hat, aber noch mehr verdient.
+              </p>
+              <div class="voucher-card__tags">
+                <span class="voucher-card__tag">Alle Kategorien</span>
+                <span class="voucher-card__tag">Premium-Verpackung</span>
+                <span class="voucher-card__tag">Eigenes Motiv möglich</span>
+              </div>
+              <div class="voucher-card__pricing">
+                <span class="voucher-card__price">90 €</span>
+                <span class="voucher-card__original">100 € Warenwert</span>
+                <span class="voucher-card__save">10 € sparen</span>
+              </div>
+              <button class="btn btn--primary add-to-cart" style="background:linear-gradient(135deg,#7c3aed,#ef4444);border:none;" data-name="Deluxe Dünschiss Hyper XL Pro Max Ultra Giga Gutschein (100€)" data-price="90.00">
+                Gutschein kaufen
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Gutschein-Kleingedrucktes -->
+        <div class="fine-print-box">
+          <div class="fine-print-box__title">Kleingedrucktes — Bitte lesen (wir meinen das ernst)</div>
+          <p>
+            Alle Gutscheine sind nach dem Kauf nicht zurückgebbar. Gutschein wird per E-Mail
+            oder Briefbombe geliefert — je nach Wahl. Verkauf unter Ausschluss jeglicher
+            Gewährleistung oder Garantie. Zudem werden 4 Zehennägel als Kostprobe vom Käufer verlangt.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- ══ Sektion 2: Produkt-Pakete ══ -->
+      <div class="shop-category" id="pakete">
+        <div class="shop-category__header">
+          <div class="shop-category__header-text">
+            <h2 class="shop-category__title">Produkt-Pakete</h2>
+            <p class="shop-category__desc">Kuratierte Sortimentspakete aus unseren beliebtesten Kategorien — für den Beschenkten, der weiß, was er will.</p>
+          </div>
+          <span class="shop-category__badge">3 Pakete</span>
+        </div>
+
+        <div class="voucher-grid">
+
+          <!-- Paket 1 -->
+          <div class="product-bundle-card">
+            <img src="images/4.jpg" alt="Wixxer Dixxer 101 Paket" class="product-bundle-card__image" loading="lazy" width="400" height="200" />
+            <div class="product-bundle-card__body">
+              <span class="product-bundle-card__eyebrow">Einstiegspaket</span>
+              <h3 class="product-bundle-card__title">Wixxer Dixxer 101</h3>
+              <p class="product-bundle-card__desc">
+                Der perfekte Einstieg in die Welt der Spargummi-Pflegeprodukte.
+                Ein sorgfältig zusammengestelltes Starterset aus den drei wichtigsten
+                Kategorien — Feuchttücher, Gleitgel und Deo. Für einen reibungslosen Start
+                in jede Lebenslage.
+              </p>
+              <div class="product-bundle-card__categories">
+                <span class="product-bundle-card__cat">Feuchttücher</span>
+                <span class="product-bundle-card__cat">Gleitgel</span>
+                <span class="product-bundle-card__cat">Deo</span>
+              </div>
+              <div class="product-bundle-card__pricing">
+                <span class="product-bundle-card__price">40 €</span>
+                <span class="product-bundle-card__original">50 € Warenwert</span>
+                <span class="product-bundle-card__save">10 € sparen</span>
+              </div>
+              <button class="btn btn--primary add-to-cart" data-name="Wixxer Dixxer 101 Paket" data-price="40.00">
+                Paket kaufen
+              </button>
+            </div>
+          </div>
+
+          <!-- Paket 2 -->
+          <div class="product-bundle-card">
+            <img src="images/5.jpg" alt="Pussy Terminator 202 Paket" class="product-bundle-card__image" loading="lazy" width="400" height="200" />
+            <div class="product-bundle-card__body">
+              <span class="product-bundle-card__eyebrow">Premium-Paket</span>
+              <h3 class="product-bundle-card__title">Pussy Terminator 202</h3>
+              <p class="product-bundle-card__desc">
+                Für den erfahrenen Enthusiasten. Dieses Paket vereint drei Spitzenkategorien:
+                vaginalen Vergnügungsbedarf, unsere von Archäologen entwickelten Anal-Produkte
+                für maximale Tiefenwirkung sowie professionelles Cum-Management auf höchstem Niveau.
+              </p>
+              <div class="product-bundle-card__categories">
+                <span class="product-bundle-card__cat">Vaginaler Vagina-Spaß</span>
+                <span class="product-bundle-card__cat">Affenstarke Anal-Produkte</span>
+                <span class="product-bundle-card__cat">Professionelles Cum-Management</span>
+              </div>
+              <div class="product-bundle-card__pricing">
+                <span class="product-bundle-card__price">87 €</span>
+                <span class="product-bundle-card__original">100 € Warenwert</span>
+                <span class="product-bundle-card__save">13 € sparen</span>
+              </div>
+              <button class="btn btn--primary add-to-cart" data-name="Pussy Terminator 202 Paket" data-price="87.00">
+                Paket kaufen
+              </button>
+            </div>
+          </div>
+
+          <!-- Paket 3 -->
+          <div class="product-bundle-card" style="border-color:#f97316;">
+            <img src="images/6.jpg" alt="Aaal Ficker 303 Paket" class="product-bundle-card__image" loading="lazy" width="400" height="200" />
+            <div class="product-bundle-card__body">
+              <span class="product-bundle-card__eyebrow">Komplett-Paket</span>
+              <h3 class="product-bundle-card__title">Aaal Ficker 303</h3>
+              <p class="product-bundle-card__desc">
+                Das vollständigste Paket im gesamten Spargummi-Sortiment. Einlösbar in
+                allen verfügbaren Kategorien — weil manche Menschen einfach alles brauchen
+                und wir ihnen das auch gönnen. Drei A's, weil einmal nicht genug ist.
+              </p>
+              <div class="product-bundle-card__categories">
+                <span class="product-bundle-card__cat">Alle Kategorien</span>
+                <span class="product-bundle-card__cat">Voller Warenwert</span>
+              </div>
+              <div class="product-bundle-card__pricing">
+                <span class="product-bundle-card__price">135 €</span>
+                <span class="product-bundle-card__original">150 € Warenwert</span>
+                <span class="product-bundle-card__save">15 € sparen</span>
+              </div>
+              <button class="btn btn--primary add-to-cart" style="background:linear-gradient(135deg,#f97316,#ef4444);border:none;" data-name="Aaal Ficker 303 Paket" data-price="135.00">
+                Paket kaufen
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Paket-Kleingedrucktes -->
+        <div class="fine-print-box">
+          <div class="fine-print-box__title">Kleingedrucktes</div>
+          <p>
+            Verkauf unter Ausschluss jeglicher Nudelsuppe und Steinkohle.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- ══ Sektion 3: Kombi-Deal ══ -->
+      <div class="shop-category" id="kombi">
+        <div class="shop-category__header">
+          <div class="shop-category__header-text">
+            <h2 class="shop-category__title">Kombi-Deal</h2>
+            <p class="shop-category__desc">Gutschein + Produkt-Paket + Verpackung — kombiniert und nochmal günstiger</p>
+          </div>
+          <span class="shop-category__badge">Bis zu 20 € sparen</span>
+        </div>
+
+        <div class="kombideal-card" style="padding:0; overflow:hidden;">
+          <img src="images/7.jpg" alt="Spargummi Geschenk-Kombi" style="width:100%; height:260px; object-fit:contain; background:#f8f8f8; display:block;" loading="lazy" width="1200" height="260" />
+          <div style="padding:2.5rem;">
+          <span class="kombideal-card__eyebrow">Exklusives Kombi-Angebot</span>
+          <h2 class="kombideal-card__title">Das Spargummi Geschenk-Kombi</h2>
+          <p class="kombideal-card__desc">
+            Wähle einen Gutschein und ein Produkt-Paket aus dem FFF Care-Bereich —
+            und spare zusätzlich 10% auf den kombinierten Gesamtpreis.
+            Perfekt, wenn du weißt, dass dein Beschenkter sowohl Gutscheine
+            als auch echte Produkte verdient.
+          </p>
+
+          <div class="kombideal-card__select-group">
+            <div class="kombideal-card__select-item">
+              <div class="kombideal-card__select-label">Gutschein wählen</div>
+              <select id="comboVoucher" aria-label="Gutschein wählen">
+                <option value="Premium Sperma-Sparer Gutschein|33">Premium Sperma-Sparer — 33 €</option>
+                <option value="VIP Einschuss-Ticket Gutschein|55">VIP Einschuss-Ticket — 55 €</option>
+                <option value="Deluxe Dünschiss Hyper XL Gutschein|90">Deluxe Dünschiss Hyper XL — 90 €</option>
+              </select>
+            </div>
+            <div class="kombideal-card__select-item">
+              <div class="kombideal-card__select-label">Produkt-Paket wählen</div>
+              <select id="comboPaket" aria-label="Produkt-Paket wählen">
+                <option value="Wixxer Dixxer 101 Paket|40">Wixxer Dixxer 101 — 40 €</option>
+                <option value="Pussy Terminator 202 Paket|87">Pussy Terminator 202 — 87 €</option>
+                <option value="Aaal Ficker 303 Paket|135">Aaal Ficker 303 — 135 €</option>
+              </select>
+            </div>
+            <div class="kombideal-card__select-item">
+              <div class="kombideal-card__select-label">Verpackung wählen</div>
+              <select id="comboVerpackung" aria-label="Verpackung wählen">
+                <option value="Standard-Verpackung|0">Standard-Verpackung — gratis</option>
+                <option value="Premium-Geschenkverpackung|5">Premium-Geschenkverpackung — +5 €</option>
+                <option value="Verpackung mit eigenem Motiv|12">Mit eigenem Motiv — +12 €</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="kombideal-card__highlight">
+            <span class="kombideal-card__tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18" aria-hidden="true"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
+              10% Kombi-Rabatt
+            </span>
+            <span class="kombideal-card__tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Gutschein + Paket kombiniert
+            </span>
+            <span class="kombideal-card__tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              Sofort versandbereit
+            </span>
+          </div>
+
+          <div style="margin-bottom:.75rem; font-size:1.1rem; font-weight:700;">
+            Gesamtpreis: <span id="comboPrice">€65,70</span>
+            <span style="font-size:.85rem; font-weight:400; color: var(--text-muted,#888); text-decoration:line-through; margin-left:.5rem;" id="comboPriceOld">€73,00</span>
+          </div>
+
+          <button class="btn btn--primary btn--lg" id="addComboToCart" style="background:linear-gradient(135deg,#f59e0b,#ef4444);border:none;">
+            Kombi-Deal in den Warenkorb
+          </button>
+          </div><!-- /inner padding wrapper -->
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="footer" id="footer-bottom">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="/" class="logo logo--light" aria-label="Spargummi">
+          <img src="../images/logo.webp" alt="Spargummi" class="logo__img logo__img--light" width="853" height="259" />
+        </a>
+        <p class="footer__tagline">Das perfekte Geschenk. Immer.</p>
+      </div>
+
+      <div class="footer__links-group">
+        <h4 class="footer__heading">Rechtliches</h4>
+        <ul class="footer__links">
+          <li><a href="#" class="footer__link">Impressum</a></li>
+          <li><a href="#" class="footer__link">Datenschutz</a></li>
+          <li><a href="#" class="footer__link">AGB</a></li>
+          <li><a href="#" class="footer__link">Widerrufsbelehrung</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__links-group">
+        <h4 class="footer__heading">Geschenke-Shop</h4>
+        <ul class="footer__links">
+          <li><a href="#gutscheine" class="footer__link">Gutscheine</a></li>
+          <li><a href="#pakete" class="footer__link">Produkt-Pakete</a></li>
+          <li><a href="#kombi" class="footer__link">Kombi-Deal</a></li>
+          <li><a href="/care/" class="footer__link">FFF Care</a></li>
+          <li><a href="/" class="footer__link">← Zum Hauptshop</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 Spargummi GmbH · Geschenke-Kollektion · Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════ CART DRAWER ═══════════════ -->
+  <div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="cart-drawer__header">
+      <h2 class="cart-drawer__title">Warenkorb</h2>
+      <button class="cart-drawer__close" id="cartClose" aria-label="Close cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="cart-drawer__items" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+        <p>Dein Warenkorb ist leer.</p>
+        <a href="#shop" class="btn btn--primary" id="cartShopLink">Jetzt shoppen</a>
+      </div>
+    </div>
+    <div class="cart-drawer__footer" id="cartFooter" style="display:none">
+      <div class="cart-drawer__total">
+        <span>Gesamt</span>
+        <span id="cartTotal">€0,00</span>
+      </div>
+      <button class="btn btn--primary btn--full">Zur Kasse</button>
+      <p class="cart-drawer__note">Versandkostenfrei ab €15 · Diskrete Verpackung</p>
+    </div>
+  </aside>
+
+  <!-- ═══════════════ TOAST ═══════════════ -->
+  <div class="toast-container" id="toastContainer" aria-live="assertive" aria-atomic="true"></div>
+
+  <script src="../main.js" defer></script>
+  <script>
+    function calcCombo() {
+      const voucher   = parseFloat(document.getElementById('comboVoucher').value.split('|')[1]);
+      const paket     = parseFloat(document.getElementById('comboPaket').value.split('|')[1]);
+      const verpackung = parseFloat(document.getElementById('comboVerpackung').value.split('|')[1]);
+      const subtotal  = voucher + paket + verpackung;
+      const discounted = subtotal * 0.9;
+      const fmt = v => new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(v);
+      document.getElementById('comboPrice').textContent    = fmt(discounted);
+      document.getElementById('comboPriceOld').textContent = fmt(subtotal);
+    }
+
+    document.getElementById('comboVoucher').addEventListener('change', calcCombo);
+    document.getElementById('comboPaket').addEventListener('change', calcCombo);
+    document.getElementById('comboVerpackung').addEventListener('change', calcCombo);
+
+    document.getElementById('addComboToCart').addEventListener('click', function () {
+      const vVal  = document.getElementById('comboVoucher').value.split('|');
+      const pVal  = document.getElementById('comboPaket').value.split('|');
+      const verVal = document.getElementById('comboVerpackung').value.split('|');
+      const total = (parseFloat(vVal[1]) + parseFloat(pVal[1]) + parseFloat(verVal[1])) * 0.9;
+      const name  = `Kombi-Deal (${vVal[0]} + ${pVal[0]} + ${verVal[0]})`;
+      if (typeof cart !== 'undefined') {
+        cart.add(name, total.toFixed(2));
+        if (typeof UI !== 'undefined') UI.showToast('Kombi-Deal hinzugefügt!');
+      }
+    });
+  </script>
+</body>
+</html>
